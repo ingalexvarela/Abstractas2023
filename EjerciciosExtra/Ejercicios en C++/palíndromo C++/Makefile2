@@ -1,6 +1,6 @@
 CC=g++
-SRC=Palindromo_palabra.cpp
-TARGET=build\Palindromo_palabra.exe
+SRC=Palindromo_frase.cpp
+TARGET=build\Palindromo_frase.exe
 CLEAN=del /f $(TARGET)
 
 all: $(TARGET)
