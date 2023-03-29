@@ -35,7 +35,7 @@ int main()
                 break;
             }
         }
-        if (es_palindromo = true)
+        if (es_palindromo == true)
         {
             std::cout << "La palabra ingresada es palindromo y la palabra era :" << palabra << std::endl;
         }
