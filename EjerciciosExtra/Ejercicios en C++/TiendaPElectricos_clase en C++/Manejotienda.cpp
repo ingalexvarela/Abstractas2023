@@ -4,7 +4,7 @@ Se desarrolla un programa que maneje una tienda de productos electrónicos que c
 - Tabletas
 - Computadoras
 
-El programa permitirá al usuario ingresar nuevos productos, actualizar información de los existentes, eliminar productos y realizar búsquedas por marca, modelo, tipo de producto, entre otros criterios. Además, se podrá generar un reporte con la información de los productos disponibles en la tienda.
+El programa permitirá al usuario ingresar nuevos productos
 */
 
 #include <iostream> // Para entrada y salida por consola
@@ -14,6 +14,62 @@ El programa permitirá al usuario ingresar nuevos productos, actualizar informac
 #include <fstream>  // Para leer y escribir archivos
 
 using namespace std;
+
+class Producto
+{
+public:
+    string marca;
+    string modelo;
+    int num_serie;
+    float precio;
+
+    void mostrarProducto()
+    {
+        // mostrar datos del producto
+    }
+};
+
+class TelefonoMovil : public Producto
+{
+public:
+    void mostrarcelular()
+    {
+        // mostrar datos especificos del producto
+    }
+};
+
+class Tableta : public Producto
+{
+public:
+    void mostrarTableta()
+    {
+        // mostrar datos especificos del producto
+    }
+};
+
+class ComputadoraPortatil : public Producto
+{
+public:
+    void mostrarlaptop()
+    {
+        // mostrar datos especificos del producto
+    }
+};
+
+class Tienda
+{
+public:
+    // Arreglo de objetos tipo producto
+    void AgregadorProductosTienda()
+    {
+        // Agregar un producto a la tienda
+    }
+
+    void MostradorProductosTienda()
+    {
+        // mostrar producto de la tienda
+    }
+};
 
 int main()
 {
