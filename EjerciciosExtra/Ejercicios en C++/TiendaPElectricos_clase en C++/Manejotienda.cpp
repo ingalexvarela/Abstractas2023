@@ -106,21 +106,26 @@ class Tienda
 {
 public:
     // Arreglo de objetos tipo producto
-    void AgregadorProductosTienda()
+    Producto productos[100];
+    int num_productos = 0;
+
+    void AgregadorProductosTienda(Producto nuevo_producto)
     {
-        // Agregar un producto a la tienda
+        // Metodo agregar un producto a la tienda
+        productos[num_productos] = nuevo_producto;
+        num_productos++;
     }
 
     void MostradorProductosTienda()
     {
-        // mostrar producto de la tienda
+        // Metodo mostrar producto de la tienda
+        cout << "Productos en la tienda:" << endl;
     }
 };
 
 int main()
 {
     cout << "Aquí vamos a desarrollar el ejemplo de clases" << endl;
-
     // Código del programa
     return 0;
 }
