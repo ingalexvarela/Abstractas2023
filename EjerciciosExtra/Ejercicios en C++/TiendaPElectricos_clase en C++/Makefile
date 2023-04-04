@@ -1,3 +1,5 @@
+SHELL := cmd.exe
+
 CC=g++
 SRC=Manejotienda.cpp
 TARGET=build\Tienda_electronica.exe
@@ -7,9 +9,8 @@ all: $(TARGET)
 	$(TARGET)
 
 $(TARGET): $(SRC)
-	@if not exist build mkdir build
+	if not exist build mkdir build
 	$(CC) $(SRC) -o $(TARGET)
 
 clean:
 	$(CLEAN)
-
