@@ -1,3 +1,5 @@
+SHELL := cmd.exe
+
 CC=g++
 SRC=HolaMundo.cpp
 TARGET=build\HolaMundo++.exe

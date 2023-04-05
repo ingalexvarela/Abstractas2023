@@ -120,8 +120,15 @@ public:
     {
         // Metodo mostrar producto de la tienda
         cout << "Productos en la tienda:" << endl;
-    }
-};
+        // Para mostrar todo el contenido del arreglo de objetos tipo Producto
+        for (int i = 0; i < num_productos; i++) {
+            cout << "Producto " << i+1 << ":" << endl;
+            productos[i].mostrarProducto();
+            cout << "--------------------------------------" << endl;
+            }
+    };
+}
+
 
 int main()
 {
