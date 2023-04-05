@@ -135,10 +135,46 @@ int main()
     cout << "Aquí vamos a desarrollar el ejemplo de clases" << endl;
 
     // Crear objetos de las clases TelefonoMovil, Tableta y ComputadoraPortatil
-    
+    TelefonoMovil celular;
+    celular.marca = "Samsung";
+    celular.modelo = "Galaxy S21";
+    celular.num_serie = 123456;
+    celular.precio = 15000.00;
+    celular.pantalla_TELE = 6.2;
+    celular.procesador_TELE = "Exynos 2100";
+    celular.RAM_TELE = 8;
+    celular.Almacenamiento_TELE = 128;
+    celular.camara_TELE = 64;
+
+    Tableta tablet;
+    tablet.marca = "Apple";
+    tablet.modelo = "iPad Air";
+    tablet.num_serie = 654321;
+    tablet.precio = 20000.00;
+    tablet.pantalla_TB = 10.9;
+    tablet.procesador_TB = "A14 Bionic";
+    tablet.RAM_TB = 4;
+    tablet.Almacenamiento_TB = 256;
+    tablet.camara_TB = 12;
+
+    ComputadoraPortatil laptop;
+    laptop.marca = "Dell";
+    laptop.modelo = "XPS 13";
+    laptop.num_serie = 789012;
+    laptop.precio = 35000.00;
+    laptop.pantalla_LP = 13.4;
+    laptop.procesador_LP = "Intel Core i7-1185G7";
+    laptop.RAM_LP = 16;
+    laptop.Almacenamiento_LP = 512;
+    laptop.Grafica_LP = 2;
+
     // Crear objeto de la clase Tienda y agregar productos
-
-     // Mostrar los productos de la tienda
-
+    Tienda miTienda;
+    miTienda.AgregadorProductosTienda(celular);
+    miTienda.AgregadorProductosTienda(tablet);
+    miTienda.AgregadorProductosTienda(laptop);
+    
+    // Mostrar los productos de la tienda
+    miTienda.MostradorProductosTienda();
     return 0;
 }
