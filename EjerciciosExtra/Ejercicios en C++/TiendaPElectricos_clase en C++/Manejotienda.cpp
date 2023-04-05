@@ -126,13 +126,19 @@ public:
             productos[i].mostrarProducto();
             cout << "--------------------------------------" << endl;
             }
-    };
-}
+    }
+};
 
 
 int main()
 {
     cout << "Aquí vamos a desarrollar el ejemplo de clases" << endl;
-    // Código del programa
+
+    // Crear objetos de las clases TelefonoMovil, Tableta y ComputadoraPortatil
+    
+    // Crear objeto de la clase Tienda y agregar productos
+
+     // Mostrar los productos de la tienda
+
     return 0;
 }
