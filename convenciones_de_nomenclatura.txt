@@ -1,0 +1,27 @@
+Se sigue la recomendación del marco de las Directrices de Diseño de C++ (C++ Core Guidelines),
+de utilizar las siguientes convenciones de nomenclatura: 
+
+1- Notación snake_case para nombrar variables y funciones: 
+    "palabras en minúsculas, separadas por guiones bajos (_) para nombrar variables y funciones" 
+     Por ejemplo:
+     int mi_variable; // Notación snake_case para una variable
+     void mi_funcion(); // Notación snake_case para una función
+     booleanos = isHomed 
+
+2- Notación CamelCase para nombrar tipos (clases, estructuras, enumeraciones, etc.):
+    "utilizar la primera letra de cada palabra en mayúscula sin separadores para nombrar tipos"
+    class MiClase {
+    public:
+        void miMetodo();
+    };
+
+3- Prefijo o sufijo para indicar el tipo de variable: Se recomienda utilizar un 
+    "prefijo o sufijo descriptivo para indicar el tipo de una variable"
+    int nEdad; 
+    float fPrecio; 
+
+    "Se recomienda Los nombres de las variables deben evitar el uso de mayúsculas y guiones 
+     bajos a excepción de nombres locales o privados"
+
+4- las constantes #define o enumeraciones debe estar en mayúscula. 
+    p.ej. EMC_MESSAGE_TYPE
