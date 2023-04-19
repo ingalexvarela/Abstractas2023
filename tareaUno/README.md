@@ -24,15 +24,16 @@ completa los pasos de https://dev.to/gamegods3/how-to-install-gcc-in-windows-10-
 
 ## Uso 
 
-Requisitos: Ejecutar los comando en la terminal desde el directorio tareaUno.
+Requisitos: Ejecutar los comandos en la terminal desde el directorio tareaUno.
 
-- Para compilar el make: 
-**mingw32-make all -s**
+- Para compilar y ejecutar con el make:  
+  **mingw32-make all -s**
 
-- Para compilar de forma manual:
-**g++ ./campus_rodrigo_facio.cpp ./main.cpp -o campus_rodrigo_facio.exe**
-**.\campus_rodrigo_facio.exe**
- 
+- Para compilar de forma manual:  
+  **g++ ./campus_rodrigo_facio.cpp ./main.cpp -o campus_rodrigo_facio.exe**
+
+  Luego, para ejecutar el programa:  
+  **.\campus_rodrigo_facio.exe**
 
 ## Licencia
 
