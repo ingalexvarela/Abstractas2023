@@ -19,17 +19,10 @@
 
 int main()
 {
-    // Crear objeto de tipo Aulas
-    Aulas miAula(1, 30);
-
-    // Imprimir información del objeto Aulas usando el método de la clase
-    miAula.imprimirAula();
-
-    // Agregar información al objeto Aulas usando el método de la clase
-    miAula.agregarAula(2, 25);
-
-    // Imprimir información del objeto Aulas usando la función externa
-    imprimirInfoAula(miAula);
-
+    // Crear objetos Aulas y agregarlos al vector
+    Aulas aula1(20, true);
+    Aulas aula2(66, true);
+    Aulas aula3(77, true);
+    imprimirInfoAula(aula1);
     return 0;
 }
