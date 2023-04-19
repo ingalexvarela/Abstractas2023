@@ -1,13 +1,43 @@
-# Instrucciones para ejecutar su programa
+# Gestión de Información del Campus Universitario
 
-## Para compilar el proyecto ubicados dentro de la carpeta tareaUno:
+Este proyecto es la tarea 1 de programación en C++ que tiene como objetivo implementar un programa para gestionar la información de un campus universitario utilizando clases y objetos.
 
-- Para compilar el make: *mingw32-make all -s*
-  Requisitos: 
-      1- Tener instaldo el compilador MinGW (Minimalist GNU for Windows).
-      2- Ejecutar el comando en la terminal desde el directorio tareaUno 
-  
-- Para compilar de forma manual: *g++ ./campus_rodrigo_facio.cpp ./main.cpp -o campus_rodrigo_facio.exe*
-                                 *.\campus_rodrigo_facio.exe*
-  Requisitos:
-      1- Ejecutar los comando en la terminal desde el directorio tareaUno en orden. 
+## Descripción
+Esta tarea se desarrolla en el marco del curso Estructuras Abstractas de Datos y Algoritmos para Ingeniería IE-0217
+
+## Tabla de contenidos
+
+- [Instalación](#instalación)
+- [Ejecutar programa](#Ejecutar programa)
+- [Licencia](#licencia)
+- [Contacto](#contacto)
+
+## Instalación del compilador  MinGW
+
+[Requisitos previos: 
+- Conexión a Internet para descargar los archivos de instalación. 
+- Windows 10 o posterior.
+
+Pasos para la instalación:
+Ve a la siguiente URL en tu navegador web: https://sourceforge.net/projects/mingw/files/Installer/mingw-get-setup.exe/download
+completa los pasos de https://dev.to/gamegods3/how-to-install-gcc-in-windows-10-the-easier-way-422j]
+
+## Ejecutar programa 
+
+[Requisitos: Ejecutar los comando en la terminal desde el directorio tareaUno.
+
+- Para compilar el make: 
+**mingw32-make all -s**
+
+- Para compilar de forma manual:
+**g++ ./campus_rodrigo_facio.cpp ./main.cpp -o campus_rodrigo_facio.exe**
+**.\campus_rodrigo_facio.exe**
+ ]
+
+## Licencia
+
+[Creative Commons Legal Code CC0 1.0 Universal, Consulte la licencia para más detalles: https://creativecommons.org/publicdomain/zero/1.0/]
+
+## Contacto
+
+[correo: alex.varela@ucr.ac.cr tel: +50685525005]
