@@ -23,10 +23,43 @@
 
 using namespace std;
 
-int Aulas::cantidadAulasCreadas = 0; // Inicializar la variable de clase estática en 0
-// Vector para almacenar los objetos Aulas creados
-static vector<Aulas> aulasVec;
+int Aulas::cantidadAulasCreadas = 0;                  // Inicializar la variable de clase estática en 0
+int EdificioAulas::cantidadEdificiosAulasCreados = 0; // Inicializar la variable de clase estática en 0
 
+// Vector para almacenar los objetos Aulas creados
+static vector<Aulas> aulasVec;                 // objetos Aulas creados
+static vector<EdificioAulas> aulasEdificioVec; // objetos Edificio Aulas creados
+
+//----------------------------------------------------------------------------CLASE EDIFICIO AULAS
+// Constructor
+EdificioAulas::EdificioAulas(bool tieneAscensor, bool tieneSoda, std::string nombreEdificio)
+{
+    ascensor = tieneAscensor;
+    soda = tieneSoda;
+    nombre_edificio = nombreEdificio;
+    cantidadEdificiosAulasCreados++;
+    aulasEdificioVec.push_back(*this); // Agregar el objeto actual al vector
+}
+// Método para agregar información de edificio
+void EdificioAulas::agregarEdificio(bool tieneAscensor, bool tieneSoda, std::string nombreEdificio)
+{
+    EdificioAulas nuevoEdificio(tieneAscensor, tieneSoda, nombreEdificio); // Crear un nuevo objeto EdificioAulas con los parámetros dados
+}
+// Método para imprimir información del objeto EdificioAulas
+void EdificioAulas::imprimirEdificioAula()
+{
+    cout << "Información sobre cada edificio de aulas:" << endl;
+    cout << "Cantidad de edificios de aulas creados: " << cantidadEdificiosAulasCreados << endl;
+    // Imprimir información de los objetos Aulas almacenados en el vector
+    for (const auto &edicioAulas : aulasEdificioVec)
+    {
+        cout << "El Edificio " << nombre_edificio << ", " << (ascensor ? "si" : "no") << " tiene ascensor y "
+             << (soda ? "si" : "no") << " tiene soda: " << endl;
+        cout << "-----------------------" << endl;
+    }
+}
+
+//----------------------------------------------------------------------------CLASE AULAS
 // Constructor
 Aulas::Aulas(std::string ubicacionEdificio, int pisoEdificio, int cantidadPupitres, bool tieneProyector)
 {
@@ -73,4 +106,9 @@ void Aulas::imprimirAula()
 void imprimirInfoAula(Aulas aula)
 {
     aula.imprimirAula();
+}
+
+void imprimirInfoEdificioAula(EdificioAulas edicioAulas)
+{
+    edicioAulas.imprimirEdificioAula();
 }

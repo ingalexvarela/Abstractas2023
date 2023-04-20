@@ -19,6 +19,11 @@
 
 int main()
 {
+    // Crear objetos Edificio Aulas y agregarlos al vector
+    EdificioAulas edicioAulas1(true, true, "sociales");
+    EdificioAulas::agregarEdificio(true, true, "ingenieria");
+    imprimirInfoEdificioAula(edicioAulas1);
+
     // Crear objetos Aulas y agregarlos al vector
     Aulas aula1("sociales", 6, 20, true);
     Aulas aula2("ingenieria", 2, 20, true);

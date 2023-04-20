@@ -18,6 +18,22 @@
 #ifndef CAMPUS_FACIO_H
 #define CAMPUS_FACIO_H
 #include <string>
+//-----------------------------------------------------------------------------CLASE EDIFICIOS
+class EdificioAulas
+{
+public:
+    bool ascensor;               // Variable booleana para indicar si tiene ascensor o no
+    bool soda;                   // Variable booleana para indicar si tiene soda o no
+    std::string nombre_edificio; // Nombre del edificio
+
+    EdificioAulas(bool tieneAscensor, bool tieneSoda, std::string nombreEdificio);               // Constructor
+    static void agregarEdificio(bool tieneAscensor, bool tieneSoda, std::string nombreEdificio); // Método para agregar información de edificio
+    void imprimirEdificioAula();                                                                 // Método para imprimir información del objeto EdificioAulas
+
+    // Variable de clase estática para almacenar la cantidad de objetos EdificioAulas creados
+    static int cantidadEdificiosAulasCreados;
+};
+//----------------------------------------------------------------------------CLASE AULAS
 class Aulas
 {
 public:
@@ -38,5 +54,6 @@ private:
     int generarID();
 };
 
-void imprimirInfoAula(Aulas aula); // Función externa para imprimir información del objeto Aulas
+void imprimirInfoAula(Aulas aula);                        // Función externa para imprimir información del objeto Aulas
+void imprimirInfoEdificioAula(EdificioAulas edicioAulas); // Función externa para imprimir información del objeto edificios
 #endif
