@@ -20,9 +20,10 @@
 int main()
 {
     // Crear objetos Aulas y agregarlos al vector
-    Aulas aula1(20, true);
-    Aulas aula2(66, true);
-    Aulas aula3(77, true);
+    Aulas aula1("sociales", 6, 20, true);
+    Aulas aula2("ingenieria", 2, 20, true);
+    Aulas aula3("matemática", 5, 20, true);
+    Aulas::agregarAula("Hoy", 12, 20, true);
     imprimirInfoAula(aula1);
     return 0;
 }

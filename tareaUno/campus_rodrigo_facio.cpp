@@ -19,6 +19,7 @@
 #include <random>
 #include <vector>
 #include "campus_facio.hpp"
+#include <string>
 
 using namespace std;
 
@@ -27,18 +28,21 @@ int Aulas::cantidadAulasCreadas = 0; // Inicializar la variable de clase estáti
 static vector<Aulas> aulasVec;
 
 // Constructor
-Aulas::Aulas(int cantidadPupitres, bool tieneProyector)
+Aulas::Aulas(std::string ubicacionEdificio, int pisoEdificio, int cantidadPupitres, bool tieneProyector)
 {
     aula_id = generarID();
     cantidad_pupitres = cantidadPupitres;
     tiene_proyector = tieneProyector;
+    ubicacion_edificio = ubicacionEdificio;
+    piso_edificio = pisoEdificio;
     cantidadAulasCreadas++;
     aulasVec.push_back(*this); // Agregar el objeto actual al vector
 }
 
 // Método para agregar información aula
-void Aulas::agregarAula(int cantidadPupitres, bool tieneProyector)
+void Aulas::agregarAula(std::string ubicacionEdificio, int pisoEdificio, int cantidadPupitres, bool tieneProyector)
 {
+    Aulas nuevaAula(ubicacionEdificio, pisoEdificio, cantidadPupitres, tieneProyector); // Crear un nuevo objeto Aulas con los parámetros dados
 }
 
 // Método para generar ID del aula random
@@ -53,13 +57,14 @@ int Aulas::generarID()
 // Método para imprimir información del objeto Aulas
 void Aulas::imprimirAula()
 {
+    cout << "Información sobre cada aula:" << endl;
+    cout << "Cantidad de aulas creadas: " << cantidadAulasCreadas << endl;
     // Imprimir información de los objetos Aulas almacenados en el vector
     for (const auto &aula : aulasVec)
     {
-        cout << "Aula ID: " << aula.aula_id << endl;
-        cout << "Cantidad de pupitres: " << aula.cantidad_pupitres << endl;
-        cout << "Tiene proyector: " << (aula.tiene_proyector ? "Si" : "No") << endl;
-        cout << "Cantidad de aulas creadas: " << cantidadAulasCreadas << endl;
+        cout << "El Aula: " << aula.aula_id << ", localizada en el piso " << aula.piso_edificio
+             << " del edificio de " << aula.ubicacion_edificio << " posee " << aula.cantidad_pupitres
+             << " pupitres y " << (aula.tiene_proyector ? "si" : "no") << " tiene proyector: " << endl;
         cout << "-----------------------" << endl;
     }
 }

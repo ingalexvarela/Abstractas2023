@@ -17,17 +17,19 @@
 
 #ifndef CAMPUS_FACIO_H
 #define CAMPUS_FACIO_H
-
+#include <string>
 class Aulas
 {
 public:
+    std::string ubicacion_edificio;
     int aula_id;
     int cantidad_pupitres;
+    int piso_edificio;
     bool tiene_proyector; // Variable booleana para indicar si tiene proyector o no
 
-    Aulas(int cantidadPupitres, bool tieneProyector);                   // Constructor
-    static void agregarAula(int cantidadPupitres, bool tieneProyector); // Método para agregar información aula
-    void imprimirAula();                                                // Método para imprimir información del objeto Aulas
+    Aulas(std::string ubicacionEdificio, int pisoEdificio, int cantidadPupitres, bool tieneProyector);                   // Constructor
+    static void agregarAula(std::string ubicacionEdificio, int pisoEdificio, int cantidadPupitres, bool tieneProyector); // Método para agregar información aula
+    void imprimirAula();                                                                                                 // Método para imprimir información del objeto Aulas
 
     // Variable de clase estática para almacenar la cantidad de objetos Aulas creados
     static int cantidadAulasCreadas;
