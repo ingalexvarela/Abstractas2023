@@ -87,7 +87,8 @@ public:                                                         // Variable bool
     TodosLosEdificios(std::string nombreFinca);                 // Constructor
     static void agregarEdificiosFinca(std::string nombreFinca); // Método para agregar información de edificio
     void agregarEdificioAulas(EdificioAulas edificio);          // Método para agregar un objeto Aulas al vector
-    void imprimirTotalEdificiosAyP();                           // Asociado a la finca
+    void agregarEdificioParqueo(EdificioParqueo newEdificioParqueo);
+    void imprimirTotalEdificiosAyP(); // Asociado a la finca
     // Variable de clase estática para almacenar la cantidad de objetos EdificioAulas creados en el edificio
     static int EdificioAulasCreados;
     static int EdificioParqueosCreados;

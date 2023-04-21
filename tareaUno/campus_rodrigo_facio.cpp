@@ -37,7 +37,8 @@ static vector<EdificioParqueo> parqueoEdificioVec; // objetos Edificio Parkeo cr
 // static vector<Aulas> aulasEdificioVec;              // objetos Aulas creadas en Edificio
 static vector<EdificioAulas> edificioVec;           // objetos Edificio Aulas creados
 static vector<TodosLosEdificios> todosEdificiosVec; // objetos Edificios
-static vector<EdificioAulas> edificiosFincaVec;     // objetos Edificios de finca
+static vector<EdificioAulas> edificiosFincaVec;     // objetos Edificios Aulas de finca
+static vector<EdificioParqueo> edificiosFinca1Vec;  // objetos Edificios Parkeos de finca
 
 //----------------------------------------------------------------------------CLASE AULAS
 // Constructor
@@ -204,17 +205,30 @@ void TodosLosEdificios::agregarEdificioAulas(EdificioAulas edificio)
     edificiosFincaVec.push_back(edificio); // Agregar el objeto EdificiosAulas al vector del edificio
     EdificioAulasCreados++;
 }
+// Método para agregar un objeto Edificios Aula al vector (copia Parueo)
+void TodosLosEdificios::agregarEdificioParqueo(EdificioParqueo newEdificioParqueo)
+{
+    edificiosFinca1Vec.push_back(newEdificioParqueo); // Agregar el objeto EdificiosAulas al vector del edificio
+    EdificioParqueosCreados++;
+}
+
 // Método para imprimir la información de todos los edificios asociados a finca
 void TodosLosEdificios::imprimirTotalEdificiosAyP()
 {
-    cout << "La Cantidad de edificios de Aulas es: " << cantidadEdificiosAyPCreados << endl;
-    cout << "La Cantidad de edificios de Parqueos es:" << cantidadEdificiosAyPCreados << endl;
     cout << "La Cantidad total de edificios de la finca " << nombre_finca << " es: " << cantidadEdificiosAyPCreados << endl;
-    cout << "Los edificios asociados a la " << nombre_finca << ","
+    cout << "La Cantidad de edificios de Aulas es: " << EdificioAulasCreados << endl;
+    cout << "Los edificios de Aulas asociados a la " << nombre_finca << ","
          << " son: " << endl;
     for (const auto &edificio : edificiosFincaVec)
     {
         edificio.imprimirAulasEnEdificio(); // Llamar al método imprimirAula de la clase Aulas para imprimir la información del aula
+    }
+    cout << "La Cantidad de edificios de Parqueos es:" << EdificioParqueosCreados << endl;
+    cout << "Los edificios de Parqueo asociados a la " << nombre_finca << ","
+         << " son: " << endl;
+    for (const auto &newEdificioParqueo : edificiosFinca1Vec)
+    {
+        newEdificioParqueo.imprimirEdificioParqueos(); // Llamar al método imprimirAula de la clase Aulas para imprimir la información del aula
     }
 }
 

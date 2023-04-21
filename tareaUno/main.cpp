@@ -42,18 +42,19 @@ int main()
     edificio1.agregarAula(aula5);
     edificio1.agregarAula(aula6);
 
-    TodosLosEdificios bloque("ANA");
+    TodosLosEdificios bloque("Chimurria");
     bloque.agregarEdificioAulas(edificio);
     bloque.agregarEdificioAulas(edificio1);
-
-    imprimirInfoEdificioparqueo(newEdificioParqueo1);
-    // newEdificioParqueo2.imprimirEdificioParqueos();
-    // bloque.imprimirTotalEdificiosAyP();
-    // newEdificioParqueo1.imprimirTotalEdificiosParqueo();
-    // newEdificioParqueo2.imprimirEdificioParqueos();
-    // Imprimir la información de las aulas en el edificio
-    // edificio.imprimirAulasEnEdificio();
-    imprimirInfoAula(aula1);
+    bloque.agregarEdificioParqueo(newEdificioParqueo1);
+    bloque.agregarEdificioParqueo(newEdificioParqueo2);
+    // imprimirInfoEdificioparqueo(newEdificioParqueo1);
+    //  newEdificioParqueo2.imprimirEdificioParqueos();
+    bloque.imprimirTotalEdificiosAyP();
+    //  newEdificioParqueo1.imprimirTotalEdificiosParqueo();
+    //  newEdificioParqueo2.imprimirEdificioParqueos();
+    //  Imprimir la información de las aulas en el edificio
+    //  edificio.imprimirAulasEnEdificio();
+    // imprimirInfoAula(aula1);
     // imprimirInfoEdificioAula(edificio);
     return 0;
 }
