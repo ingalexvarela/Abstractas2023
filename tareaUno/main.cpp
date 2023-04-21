@@ -19,16 +19,22 @@
 
 int main()
 {
-    // Crear objetos Edificio Aulas y agregarlos al vector
-    EdificioAulas edicioAulas1(true, true, "sociales");
-    EdificioAulas::agregarEdificio(true, true, "ingenieria");
-    imprimirInfoEdificioAula(edicioAulas1);
+    // Crear un edificio de aulas
+    EdificioAulas edificio(true, false, "Ingeniería");
 
-    // Crear objetos Aulas y agregarlos al vector
-    Aulas aula1("sociales", 6, 20, true);
-    Aulas aula2("ingenieria", 2, 20, true);
-    Aulas aula3("matemática", 5, 20, true);
-    Aulas::agregarAula("Hoy", 12, 20, true);
+    // Crear objetos de la clase Aulas
+    Aulas aula1("Aula 101", 10, 30, true);
+    Aulas aula2("Aula 102", 1, 25, true);
+    Aulas aula3("Aula 103", 2, 35, true);
+
+    // Agregar las aulas al edificio
+    edificio.agregarAula(aula1);
+    edificio.agregarAula(aula2);
+    edificio.agregarAula(aula3);
+
+    // Imprimir la información de las aulas en el edificio
+    edificio.imprimirAulasEnEdificio();
+
     imprimirInfoAula(aula1);
     return 0;
 }
