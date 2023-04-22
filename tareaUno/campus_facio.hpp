@@ -157,8 +157,9 @@ public:
     /**
      * @brief Constructor de la clase Finca.
      * @param nombre El nombre de la finca.
+     * @param pasaBus Indica si la finca está en una ruta de transporte público.
      */
-    Finca(const std::string &nombre) : nombre_(nombre) {}
+    Finca(const std::string &nombre, bool pasaBus) : nombre_(nombre), pasa_bus_(pasaBus) {}
     /**
      * @brief Agrega una facultad a la finca.
      * @param facultad La facultad a agregar.
@@ -177,6 +178,7 @@ public:
 private:
     std::string nombre_;
     std::vector<Facultad> facultades_;
+    bool pasa_bus_;
 };
 /**
  * @class Campus

@@ -50,12 +50,12 @@ int main()
     facultad3.agregarEdificioParqueo(edificioParqueo2);
 
     // Crear instancia de finca
-    Finca finca("Universidad XYZ");
+    Finca finca("Universidad XYZ", true);
     finca.agregarFacultad(facultad1);
     finca.agregarFacultad(facultad2);
 
     // Crear instancia de finca
-    Finca finca1("Universidad UCR");
+    Finca finca1("Universidad UCR", false);
     finca1.agregarFacultad(facultad3);
 
     // Crear instancia de campus

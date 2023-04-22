@@ -86,7 +86,7 @@ void Facultad::agregarEdificioParqueo(const EdificioParqueo &edificio)
 void Facultad::imprimirInformacion() const
 {
     cout << endl;
-    cout << "La Facultad: " << nombre_ << " , cuenta con " << edificiosAulas_.size() << " edificios de aulas y con "
+    cout << "La Facultad: " << nombre_ << ", cuenta con " << edificiosAulas_.size() << " edificios de aulas y con "
          << edificiosParqueo_.size() << " edificios de parqueo:" << endl;
     cout << "Información sobre los edificios de aulas:" << endl;
     for (const auto &edificioAulas : edificiosAulas_)
@@ -113,8 +113,10 @@ string Finca::getNombre() const
 void Finca::imprimirInformacion() const
 {
     cout << endl;
-    cout << "La Finca " << nombre_ << " que cuenta con " << facultades_.size() << " facultades:" << endl;
-    cout << "--------------------------------------------" << endl;
+    cout << "La Finca " << nombre_ << ", cuenta con " << facultades_.size() << " facultades, y por está "
+         << (pasa_bus_ ? "si" : "no") << " pasa el autobús externo" << endl;
+    cout
+        << "--------------------------------------------" << endl;
     for (const auto &facultad : facultades_)
     {
         facultad.imprimirInformacion();
