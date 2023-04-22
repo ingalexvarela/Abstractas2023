@@ -1,7 +1,7 @@
 /**
  * @file main.cpp
  *
- * @brief Descripción breve del contenido de main.cpp
+ * @brief Acá se crean las instancias (objetos) y se asigna por gerarquia a otras clases que los recibe como vectores
  *
  * Descripción detallada del contenido del archivo fuente
  *
@@ -18,43 +18,52 @@
 #include "campus_facio.hpp"
 
 int main()
-{ // Crear un edificio de Parqueo
-    EdificioParqueo newEdificioParqueo1(6, true, "Parqueo 1");
-    EdificioParqueo newEdificioParqueo2(12, false, "Parqueo 2");
-    //  Crear un edificio de aulas
-    EdificioAulas edificio(true, false, "Ingeniería");
-    EdificioAulas edificio1(true, false, "Sociales");
-    // Crear objetos de la clase Aulas
-    Aulas aula1("Aula 101", 10, 30, true);
-    Aulas aula2("Aula 102", 1, 25, true);
-    Aulas aula3("Aula 103", 2, 35, true);
+{
+    // Crear instancias de aulas
+    Aula aula1("A1", 30, true);
+    Aula aula2("B1", 40, false);
+    Aula aula3("C1", 25, true);
 
-    Aulas aula4("Aula 152", 10, 30, true);
-    Aulas aula5("Aula 153", 1, 25, true);
-    Aulas aula6("Aula 154", 2, 35, true);
+    // Crear instancias de edificios de aulas
+    EdificioAulas edificioAulas1("Ingeniería eléctrica", true, true);
+    edificioAulas1.agregarAula(aula1);
+    edificioAulas1.agregarAula(aula2);
 
-    // Agregar las aulas al edificio
-    edificio.agregarAula(aula1);
-    edificio.agregarAula(aula2);
-    edificio.agregarAula(aula3);
+    EdificioAulas edificioAulas2("Edificio Aulas 2", true, true);
+    edificioAulas2.agregarAula(aula3);
 
-    edificio1.agregarAula(aula4);
-    edificio1.agregarAula(aula5);
-    edificio1.agregarAula(aula6);
+    // Crear instancias de edificios de parqueo
+    EdificioParqueo edificioParqueo1("Parqueo sociales", 100, true);
+    EdificioParqueo edificioParqueo2("Parqueo ingenieria", 100, false);
 
-    TodosLosEdificios bloque("Chimurria");
-    bloque.agregarEdificioAulas(edificio);
-    bloque.agregarEdificioAulas(edificio1);
-    bloque.agregarEdificioParqueo(newEdificioParqueo1);
-    bloque.agregarEdificioParqueo(newEdificioParqueo2);
-    // imprimirInfoEdificioparqueo(newEdificioParqueo1);
-    //  newEdificioParqueo2.imprimirEdificioParqueos();
-    bloque.imprimirTotalEdificiosAyP();
-    //  newEdificioParqueo1.imprimirTotalEdificiosParqueo();
-    //  newEdificioParqueo2.imprimirEdificioParqueos();
-    //  Imprimir la información de las aulas en el edificio
-    //  edificio.imprimirAulasEnEdificio();
-    // imprimirInfoAula(aula1);
-    // imprimirInfoEdificioAula(edificio);
+    // Crear instancias de facultades
+    Facultad facultad1("Facultad de Ciencias");
+    facultad1.agregarEdificioAulas(edificioAulas1);
+    facultad1.agregarEdificioParqueo(edificioParqueo1);
+
+    Facultad facultad2("Facultad de Ingeniería");
+    facultad2.agregarEdificioAulas(edificioAulas2);
+    facultad2.agregarEdificioParqueo(edificioParqueo2);
+
+    Facultad facultad3("Facultad de Ingeniería");
+    facultad3.agregarEdificioAulas(edificioAulas2);
+    facultad3.agregarEdificioParqueo(edificioParqueo2);
+
+    // Crear instancia de finca
+    Finca finca("Universidad XYZ");
+    finca.agregarFacultad(facultad1);
+    finca.agregarFacultad(facultad2);
+
+    // Crear instancia de finca
+    Finca finca1("Universidad UCR");
+    finca1.agregarFacultad(facultad3);
+
+    // Crear instancia de campus
+    Campus campus("Campus Principal");
+    campus.agregarFinca(finca);
+    campus.agregarFinca(finca1);
+
+    // Imprimir información del campus y sus fincas llamando funcion externa
+    imprimirInfoCampus(campus);
     return 0;
 }

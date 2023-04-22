@@ -1,10 +1,10 @@
 /**
  * @file campus_rodrigo_facio.cpp
  *
- * @brief Descripción breve del contenido de campus_rodrigo_facio.cpp
+ * @brief Este codigo define los constructores de  clases y sus metodos, además una funcion externa
  *
  * Descripción detallada del contenido del archivo fuente
- *
+ *Se define el comportamiento de las clases creadas para la gestion de un campus universitario
  * Este archivo fuente forma parte del proyecto "Campus" que utiliza la licencia Creative Commons Legal Code CC0 1.0 Universal.
  *
  * @license
@@ -23,228 +23,122 @@
 
 using namespace std;
 
-int Aulas::cantidadAulasCreadas = 0;                      // Inicializar la variable de clase estática en 0
-int EdificioParqueo::cantidadEdificiosParqueoCreados = 0; // Inicializar la variable de clase estática en 0
-// int EdificioAulas::AulasEdificioCreadas = 0;
-int EdificioAulas::cantidadEdificiosAulasCreados = 0;
+// Variable estática para almacenar la cantidad de objetos EdificioAulas
 
-int TodosLosEdificios::cantidadEdificiosAyPCreados = 0;
-int TodosLosEdificios::EdificioAulasCreados = 0;
-int TodosLosEdificios::EdificioParqueosCreados = 0;
-// Vector para almacenar los objetos
-static vector<Aulas> aulasVec;                     // objetos Aulas creados
-static vector<EdificioParqueo> parqueoEdificioVec; // objetos Edificio Parkeo creados
-// static vector<Aulas> aulasEdificioVec;              // objetos Aulas creadas en Edificio
-static vector<EdificioAulas> edificioVec;           // objetos Edificio Aulas creados
-static vector<TodosLosEdificios> todosEdificiosVec; // objetos Edificios
-static vector<EdificioAulas> edificiosFincaVec;     // objetos Edificios Aulas de finca
-static vector<EdificioParqueo> edificiosFinca1Vec;  // objetos Edificios Parkeos de finca
+//-----------------------------------------------AULA
+Aula::Aula(const string &nombre, int cantidad_pupitres, bool tieneProyector)
+    : nombre_(nombre), cantidad_pupitres_(cantidad_pupitres), tieneProyector_(tieneProyector), aula_id_(generarID()) {}
 
-//----------------------------------------------------------------------------CLASE AULAS
-// Constructor
-Aulas::Aulas(std::string ubicacionEdificio, int pisoEdificio, int cantidadPupitres, bool tieneProyector)
+void Aula::imprimirInformacion() const
 {
-    aula_id = generarID();
-    cantidad_pupitres = cantidadPupitres;
-    tiene_proyector = tieneProyector;
-    ubicacion_edificio = ubicacionEdificio;
-    piso_edificio = pisoEdificio;
-    cantidadAulasCreadas++;
-    aulasVec.push_back(*this); // Agregar el objeto actual al vector
+    cout << "El Aula " << nombre_ << " (ID: " << aula_id_ << ")"
+         << " cuenta con " << cantidad_pupitres_ << " pupitres y " << (tieneProyector_ ? "si" : "no") << " tiene proyector" << endl;
 }
 
-// Método para agregar información aula
-void Aulas::agregarAula(std::string ubicacionEdificio, int pisoEdificio, int cantidadPupitres, bool tieneProyector)
-{
-    Aulas nuevaAula(ubicacionEdificio, pisoEdificio, cantidadPupitres, tieneProyector); // Crear un nuevo objeto Aulas con los parámetros dados                                                      // Agregar el nuevo objeto al vector
-}
-
-// Método para generar ID del aula random
-int Aulas::generarID()
+int Aula::generarID()
 {
     static random_device rd;
     static mt19937 gen(rd());
     uniform_int_distribution<> dis(10000000, 99999999);
     return dis(gen);
 }
+//-----------------------------------------------EDIFICIO AULA
 
-// Método para imprimir información del objeto Aulas
-void Aulas::imprimirAula() const
+EdificioAulas::EdificioAulas(const std::string &nombre, bool tieneAscensor, bool tieneSoda)
 {
-    cout << "El Aula: " << aula_id << ", localizada en el piso " << piso_edificio
-         << " del edificio de " << ubicacion_edificio << " posee " << cantidad_pupitres
-         << " pupitres y " << (tiene_proyector ? "si" : "no") << " tiene proyector: " << endl;
-    cout << "-----------------------" << endl;
+    nombre_ = nombre;
+    tiene_ascensor_ = tieneAscensor;
+    tiene_soda_ = tieneSoda;
 }
 
-// Método para imprimir información del objeto Aulas
-void Aulas::imprimirTotalAulas()
+void EdificioAulas::agregarAula(const Aula &aula)
 {
-    cout << "Información sobre cada aula:" << endl;
-    cout << "Cantidad de aulas creadas: " << cantidadAulasCreadas << endl;
-    // Imprimir información de los objetos Aulas almacenados en el vector
-    for (const auto &aula : aulasVec)
+    aulas_.push_back(aula);
+}
+
+void EdificioAulas::imprimirInformacion() const
+{
+    cout << "El edificio de aulas es " << nombre_ << " y cuenta con " << aulas_.size() << " aulas, "
+         << (tiene_ascensor_ ? "si" : "no") << " tiene ascensor y " << (tiene_soda_ ? "si" : "no")
+         << " cuenta con soda" << endl;
+    for (const auto &aula : aulas_)
     {
-        cout << "El Aula: " << aula.aula_id << ", localizada en el piso " << aula.piso_edificio
-             << " del edificio de " << aula.ubicacion_edificio << " posee " << aula.cantidad_pupitres
-             << " pupitres y " << (aula.tiene_proyector ? "si" : "no") << " tiene proyector: " << endl;
-        cout << "-----------------------" << endl;
+        aula.imprimirInformacion();
     }
 }
 
-//----------------------------------------------------------------------------CLASE EDIFICIO AULAS
-
-// Constructor
-EdificioAulas::EdificioAulas(bool tieneAscensor, bool tieneSoda, std::string nombreEdificio)
+void EdificioParqueo::imprimirInformacion() const
 {
-    // aulasEdificioVec.clear();
-    ascensor = tieneAscensor;
-    soda = tieneSoda;
-    nombre_edificio = nombreEdificio;
-    cantidadEdificiosAulasCreados++;
-    edificioVec.push_back(*this); // Agregar el objeto actual al vector
+    cout << "El edificio de parqueo llamado " << nombre_ << " cuenta con capacidad para " << capacidad_ << " vehículos y "
+         << (tiene_ascensor_ ? "si" : "no") << " tiene ascensor" << endl;
 }
 
-// Método para agregar edificio
-void EdificioAulas::agregarEdificio(bool tieneAscensor, bool tieneSoda, std::string nombreEdificio)
+void Facultad::agregarEdificioAulas(const EdificioAulas &edificio)
 {
-    EdificioAulas nuevoEdificio(tieneAscensor, tieneSoda, nombreEdificio); // Crear un nuevo objeto EdificioAulas con los parámetros dados
+    edificiosAulas_.push_back(edificio);
 }
 
-// Método para agregar un objeto Aulas al vector
-void EdificioAulas::agregarAula(Aulas aula)
+void Facultad::agregarEdificioParqueo(const EdificioParqueo &edificio)
 {
-    aulasEdificioVec.push_back(aula); // Agregar el objeto Aulas al vector del edificio
-    AulasEdificioCreadas++;
+    edificiosParqueo_.push_back(edificio);
 }
 
-// Método para imprimir la información de las aulas en el edificio
-void EdificioAulas::imprimirAulasEnEdificio() const
+void Facultad::imprimirInformacion() const
 {
-    cout << "El Edificio " << nombre_edificio << ", " << (ascensor ? "si" : "no") << " tiene ascensor y "
-         << (soda ? "si" : "no") << " tiene soda: " << endl;
-    cout << "Cantidad de aulas del Edificio: " << nombre_edificio << " es: " << AulasEdificioCreadas << endl;
-    for (const auto &aula : aulasEdificioVec)
+    cout << endl;
+    cout << "La Facultad: " << nombre_ << " , cuenta con " << edificiosAulas_.size() << " edificios de aulas y con "
+         << edificiosParqueo_.size() << " edificios de parqueo:" << endl;
+    cout << "Información sobre los edificios de aulas:" << endl;
+    for (const auto &edificioAulas : edificiosAulas_)
     {
-        aula.imprimirAula(); // Llamar al método imprimirAula de la clase Aulas para imprimir la información del aula
+        edificioAulas.imprimirInformacion();
+    }
+    cout << "Información sobre los edificios de parqueo:" << endl;
+    for (const auto &edificioParqueo : edificiosParqueo_)
+    {
+        edificioParqueo.imprimirInformacion();
     }
 }
 
-// Método para imprimir el total de los edificios Aulas
-void EdificioAulas::imprimirTotalEdificios()
+void Finca::agregarFacultad(const Facultad &facultad)
 {
-    cout << "Información sobre todos los edificios:" << endl;
-    cout << "Cantidad de edificios creados: " << cantidadEdificiosAulasCreados << endl;
-    // Imprimir información de los objetos edificios almacenados en el vector
-    for (const auto &edificio : edificioVec)
+    facultades_.push_back(facultad);
+}
+
+string Finca::getNombre() const
+{
+    return nombre_;
+}
+
+void Finca::imprimirInformacion() const
+{
+    cout << endl;
+    cout << "La Finca " << nombre_ << " que cuenta con " << facultades_.size() << " facultades:" << endl;
+    cout << "--------------------------------------------" << endl;
+    for (const auto &facultad : facultades_)
     {
-        cout << "El Edificio " << nombre_edificio << ", " << (ascensor ? "si" : "no") << " tiene ascensor y "
-             << (soda ? "si" : "no") << " tiene soda: " << endl;
-        cout << "-----------------------" << endl;
-    }
-}
-//----------------------------------------------------------------------------CLASE EDIFICIO PARqUEO
-
-// Constructor
-EdificioParqueo::EdificioParqueo(int pisosParqueo, bool tieneAscensor, std::string nombreParqueo)
-{
-    // aulasEdificioVec.clear();
-    nombre_parqueo = nombreParqueo;
-    ascensor = tieneAscensor;
-    numero_pisos_parqueo = pisosParqueo;
-    cantidadEdificiosParqueoCreados++;
-    parqueoEdificioVec.push_back(*this); // Agregar el objeto actual al vector
-}
-
-// Método para agregar creacion objeto EdificioParqueo
-void EdificioParqueo::agregarEdificioParqueo(int pisosParqueo, bool tieneAscensor, std::string nombreParqueo)
-{
-    EdificioParqueo newEdificioParqueo(pisosParqueo, tieneAscensor, nombreParqueo); // Crear un nuevo objeto Aulas con los parámetros dados                                                      // Agregar el nuevo objeto al vector
-}
-
-// Método para imprimir información del objeto EdificioParqueo
-void EdificioParqueo::imprimirEdificioParqueos() const
-{
-    cout << "El Edificio Parqueo llamado: " << nombre_parqueo << ", Tiene " << numero_pisos_parqueo
-         << " Pisos, además " << (ascensor ? "si" : "no") << " ascensor" << endl;
-    cout << "-----------------------" << endl;
-}
-
-// Método para imprimir información del objeto Edificio Parqueo
-void EdificioParqueo::imprimirTotalEdificiosParqueo()
-{
-    cout << "Información sobre cada Edificio de parqueo :" << endl;
-    cout << "Cantidad de Edificios de parqueos creados: " << cantidadEdificiosParqueoCreados << endl;
-    // Imprimir información de los objetos Aulas almacenados en el vector
-    for (const auto &newEdificioParqueo : parqueoEdificioVec)
-    {
-        cout << "El Edificio de parqueo llamado: " << newEdificioParqueo.nombre_parqueo << ", Tiene " << newEdificioParqueo.numero_pisos_parqueo
-             << " Pisos, y además " << (ascensor ? "si" : "no") << " cuenta con ascensor" << endl;
-        cout << "-----------------------" << endl;
+        facultad.imprimirInformacion();
     }
 }
 
-//----------------------------------------------------------------------------CLASE EDIFICIOS
-
-// Constructor
-TodosLosEdificios::TodosLosEdificios(std::string nombreFinca)
+void Campus::agregarFinca(const Finca &finca)
 {
-    nombre_finca = nombreFinca;
-    cantidadEdificiosAyPCreados++;
-    todosEdificiosVec.push_back(*this); // Agregar el objeto actual al vector
+    fincas_.push_back(finca);
 }
 
-// Método para agregar edificios
-void TodosLosEdificios::agregarEdificiosFinca(std::string nombreFinca)
+void Campus::imprimirInformacion() const
 {
-    TodosLosEdificios newEdificio(nombreFinca); // Crear un nuevo objeto EdificioAulas o Parqueo
-}
-// Método para agregar un objeto Edificios Aula al vector (copia Parueo)
-void TodosLosEdificios::agregarEdificioAulas(EdificioAulas edificio)
-{
-    edificiosFincaVec.push_back(edificio); // Agregar el objeto EdificiosAulas al vector del edificio
-    EdificioAulasCreados++;
-}
-// Método para agregar un objeto Edificios Aula al vector (copia Parueo)
-void TodosLosEdificios::agregarEdificioParqueo(EdificioParqueo newEdificioParqueo)
-{
-    edificiosFinca1Vec.push_back(newEdificioParqueo); // Agregar el objeto EdificiosAulas al vector del edificio
-    EdificioParqueosCreados++;
-}
-
-// Método para imprimir la información de todos los edificios asociados a finca
-void TodosLosEdificios::imprimirTotalEdificiosAyP()
-{
-    cout << "La Cantidad total de edificios de la finca " << nombre_finca << " es: " << cantidadEdificiosAyPCreados << endl;
-    cout << "La Cantidad de edificios de Aulas es: " << EdificioAulasCreados << endl;
-    cout << "Los edificios de Aulas asociados a la " << nombre_finca << ","
-         << " son: " << endl;
-    for (const auto &edificio : edificiosFincaVec)
+    cout << endl;
+    cout << "El Campus llamado ( " << nombre_ << " ), cuenta con " << fincas_.size() << endl;
+    /* << " Fincas" << cantidadFacultades << " Facultades, " << cantidadEdificiosParqueoCreados
+     << " Edificios de Parqueos y " << cantidadEdificiosAulasCreados << " Edificios de Aulas" << endl;*/
+    for (const auto &finca : fincas_)
     {
-        edificio.imprimirAulasEnEdificio(); // Llamar al método imprimirAula de la clase Aulas para imprimir la información del aula
-    }
-    cout << "La Cantidad de edificios de Parqueos es:" << EdificioParqueosCreados << endl;
-    cout << "Los edificios de Parqueo asociados a la " << nombre_finca << ","
-         << " son: " << endl;
-    for (const auto &newEdificioParqueo : edificiosFinca1Vec)
-    {
-        newEdificioParqueo.imprimirEdificioParqueos(); // Llamar al método imprimirAula de la clase Aulas para imprimir la información del aula
+        finca.imprimirInformacion();
     }
 }
 
-//------------------------------------------------------------------------------------------------------
-// Función externa para imprimir información del objeto Aulas
-void imprimirInfoAula(Aulas aula)
+void imprimirInfoCampus(Campus campus)
 {
-    aula.imprimirTotalAulas();
-}
-
-void imprimirInfoEdificioAula(EdificioAulas edificio)
-{
-    edificio.imprimirTotalEdificios();
-}
-
-void imprimirInfoEdificioparqueo(EdificioParqueo newEdificioParqueo)
-{
-    newEdificioParqueo.imprimirTotalEdificiosParqueo();
+    campus.imprimirInformacion();
 }
