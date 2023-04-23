@@ -1,10 +1,12 @@
 # Gestión de Información del Campus Universitario
 
-Este proyecto es la tarea 1 de programación en C++ que tiene como objetivo implementar un programa para gestionar la información de un campus universitario utilizando clases y objetos.
+Este proyecto es la tarea 1 de programación en C++ que tiene como objetivo implementar 
+un programa para gestionar la información de un campus universitario utilizando clases y objetos.
 
 ## Descripción
-Esta tarea se desarrolla en el marco del curso Estructuras Abstractas de Datos y Algoritmos para Ingeniería IE-0217
-
+Esta tarea se desarrolla en el marco del curso Estructuras Abstractas de Datos y Algoritmos para 
+Ingeniería IE-0217 y la documentación del código fuente se puede consultar en la dirección: 
+- [Sitio web del proyecto](https://doxygenizi12.000webhostapp.com/)
 ## Tabla de contenidos
 
 - [Instalación](#instalación)
