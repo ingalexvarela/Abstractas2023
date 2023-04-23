@@ -1,7 +1,7 @@
 /**
  * @file main.cpp
  *
- * @brief Acá se crean las instancias (objetos) y se asigna por gerarquia a otras clases que los recibe como vectores
+ * @brief Acá se crean las instancias (objetos) y se asigna por jerarquía a otras clases que los recibe como vectores
  *
  * Descripción detallada del contenido del archivo fuente
  *
