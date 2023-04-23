@@ -20,21 +20,21 @@
 int main()
 {
     // Crear instancias de aulas
-    Aula aula1("A1", 30, true);
-    Aula aula2("B1", 40, false);
-    Aula aula3("C1", 25, true);
+    Aula aula1("A1", 30, true, 6);
+    Aula aula2("B1", 40, false, 5);
+    Aula aula3("C1", 25, true, 8);
 
     // Crear instancias de edificios de aulas
-    EdificioAulas edificioAulas1("Ingeniería eléctrica", true, true);
+    EdificioAulas edificioAulas1("Ingeniería eléctrica", true, true, 6);
     edificioAulas1.agregarAula(aula1);
     edificioAulas1.agregarAula(aula2);
 
-    EdificioAulas edificioAulas2("Edificio Aulas 2", true, true);
+    EdificioAulas edificioAulas2("Edificio Aulas 2", true, true, 7);
     edificioAulas2.agregarAula(aula3);
 
     // Crear instancias de edificios de parqueo
-    EdificioParqueo edificioParqueo1("Parqueo sociales", 100, true);
-    EdificioParqueo edificioParqueo2("Parqueo ingenieria", 100, false);
+    EdificioParqueo edificioParqueo1("Parqueo sociales", 100, true, 12);
+    EdificioParqueo edificioParqueo2("Parqueo ingenieria", 100, false, 25);
 
     // Crear instancias de facultades
     Facultad facultad1("Facultad de Ciencias");

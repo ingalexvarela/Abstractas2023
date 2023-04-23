@@ -36,10 +36,11 @@ public:
     /**
      * @brief Constructor de la clase Aula.
      * @param nombre Nombre del aula.
-     * @param cantidad_pupitres Cantidad de pupitres en el aula.
+     * @param cantidadPupitres Cantidad de pupitres en el aula.
      * @param tieneProyector Indica si el aula tiene proyector o no.
+     * @param aulaenPiso Ubicacion del aula en un piso.
      */
-    Aula(const std::string &nombre, int cantidad_pupitres, bool tieneProyector);
+    Aula(const std::string &nombre, int cantidadPupitres, bool tieneProyector, int aulaenPiso);
     /**
      * @brief Imprime la información del aula en la consola.
      */
@@ -50,6 +51,7 @@ private:
     int cantidad_pupitres_;
     bool tieneProyector_;
     int aula_id_;
+    int piso_;
 
     /**
      * @brief Genera un ID único para el aula.
@@ -69,8 +71,9 @@ public:
      * @param nombre Nombre del edificio de aulas.
      * @param tieneAscensor Indica si el edificio tiene ascensor o no.
      * @param tieneSoda Indica si el edificio tiene soda o no.
+     * @param numeroPiso Indica el número de pisos del edificio de aulas.
      */
-    EdificioAulas(const std::string &nombre, bool tieneAscensor, bool tieneSoda);
+    EdificioAulas(const std::string &nombre, bool tieneAscensor, bool tieneSoda, int numeroPiso);
     /**
      * @brief Agrega un aula al edificio.
      * @param aula Aula a agregar.
@@ -86,6 +89,7 @@ private:
     std::vector<Aula> aulas_;
     bool tiene_ascensor_;
     bool tiene_soda_;
+    int numero_piso_;
 };
 
 /**
@@ -100,9 +104,10 @@ public:
      * @param nombre Nombre del edificio de parqueo.
      * @param capacidad Capacidad de estacionamiento del edificio de parqueo.
      * @param tieneAscensor Indica si el edificio de parqueo tiene ascensor o no.
+     * @param numeroPisoParqueo Indica el número de pisos del edificio de parqueo.
      */
-    EdificioParqueo(const std::string &nombre, int capacidad, bool tieneAscensor)
-        : nombre_(nombre), capacidad_(capacidad), tiene_ascensor_(tieneAscensor)
+    EdificioParqueo(const std::string &nombre, int capacidad, bool tieneAscensor, int numeroPisoParqueo)
+        : nombre_(nombre), capacidad_(capacidad), tiene_ascensor_(tieneAscensor), numero_piso_parqueo(numeroPisoParqueo)
     {
     }
     /**
@@ -114,6 +119,7 @@ private:
     std::string nombre_;
     int capacidad_;
     bool tiene_ascensor_;
+    int numero_piso_parqueo;
 };
 /**
  * @class Facultad

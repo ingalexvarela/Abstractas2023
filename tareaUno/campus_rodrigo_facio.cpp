@@ -26,13 +26,15 @@ using namespace std;
 // Variable estática para almacenar la cantidad de objetos EdificioAulas
 
 //-----------------------------------------------AULA
-Aula::Aula(const string &nombre, int cantidad_pupitres, bool tieneProyector)
-    : nombre_(nombre), cantidad_pupitres_(cantidad_pupitres), tieneProyector_(tieneProyector), aula_id_(generarID()) {}
+Aula::Aula(const string &nombre, int cantidadPupitres, bool tieneProyector, int aulaenPiso)
+    : nombre_(nombre), cantidad_pupitres_(cantidadPupitres), tieneProyector_(tieneProyector), piso_(aulaenPiso), aula_id_(generarID()) {}
 
 void Aula::imprimirInformacion() const
 {
-    cout << "El Aula " << nombre_ << " (ID: " << aula_id_ << ")"
-         << " cuenta con " << cantidad_pupitres_ << " pupitres y " << (tieneProyector_ ? "si" : "no") << " tiene proyector" << endl;
+    cout << "Aula " << nombre_ << " (ID: " << aula_id_ << ")"
+         << " ubicada en el piso: " << piso_
+         << ", cuenta con " << cantidad_pupitres_
+         << " pupitres y " << (tieneProyector_ ? "si" : "no") << " tiene proyector" << endl;
 }
 
 int Aula::generarID()
@@ -44,11 +46,12 @@ int Aula::generarID()
 }
 //-----------------------------------------------EDIFICIO AULA
 
-EdificioAulas::EdificioAulas(const std::string &nombre, bool tieneAscensor, bool tieneSoda)
+EdificioAulas::EdificioAulas(const std::string &nombre, bool tieneAscensor, bool tieneSoda, int numeroPiso)
 {
     nombre_ = nombre;
     tiene_ascensor_ = tieneAscensor;
     tiene_soda_ = tieneSoda;
+    numero_piso_ = numeroPiso;
 }
 
 void EdificioAulas::agregarAula(const Aula &aula)
@@ -60,7 +63,8 @@ void EdificioAulas::imprimirInformacion() const
 {
     cout << "El edificio de aulas es " << nombre_ << " y cuenta con " << aulas_.size() << " aulas, "
          << (tiene_ascensor_ ? "si" : "no") << " tiene ascensor y " << (tiene_soda_ ? "si" : "no")
-         << " cuenta con soda" << endl;
+         << " cuenta con soda, además tiene: " << numero_piso_ << " Pisos" << endl;
+    cout << "Información de las aulas en el edificio: " << nombre_ << " es: " << endl;
     for (const auto &aula : aulas_)
     {
         aula.imprimirInformacion();
@@ -70,7 +74,7 @@ void EdificioAulas::imprimirInformacion() const
 void EdificioParqueo::imprimirInformacion() const
 {
     cout << "El edificio de parqueo llamado " << nombre_ << " cuenta con capacidad para " << capacidad_ << " vehículos y "
-         << (tiene_ascensor_ ? "si" : "no") << " tiene ascensor" << endl;
+         << (tiene_ascensor_ ? "si" : "no") << " tiene ascensor y es de " << numero_piso_parqueo << " Pisos" << endl;
 }
 
 void Facultad::agregarEdificioAulas(const EdificioAulas &edificio)
@@ -85,19 +89,20 @@ void Facultad::agregarEdificioParqueo(const EdificioParqueo &edificio)
 
 void Facultad::imprimirInformacion() const
 {
-    cout << endl;
+
     cout << "La Facultad: " << nombre_ << ", cuenta con " << edificiosAulas_.size() << " edificios de aulas y con "
          << edificiosParqueo_.size() << " edificios de parqueo:" << endl;
-    cout << "Información sobre los edificios de aulas:" << endl;
+    cout << "Información sobre los edificios de aulas asociados a la facultad: (" << nombre_ << "):" << endl;
     for (const auto &edificioAulas : edificiosAulas_)
     {
         edificioAulas.imprimirInformacion();
     }
-    cout << "Información sobre los edificios de parqueo:" << endl;
+    cout << "Información sobre los edificios de parqueo asociados a la facultad: (" << nombre_ << "):" << endl;
     for (const auto &edificioParqueo : edificiosParqueo_)
     {
         edificioParqueo.imprimirInformacion();
     }
+    cout << endl;
 }
 
 void Finca::agregarFacultad(const Facultad &facultad)
@@ -131,9 +136,14 @@ void Campus::agregarFinca(const Finca &finca)
 void Campus::imprimirInformacion() const
 {
     cout << endl;
-    cout << "El Campus llamado ( " << nombre_ << " ), cuenta con " << fincas_.size() << endl;
+    cout << "El Campus llamado ( " << nombre_ << " ), cuenta con " << fincas_.size() << " FINCAS." << endl;
     /* << " Fincas" << cantidadFacultades << " Facultades, " << cantidadEdificiosParqueoCreados
      << " Edificios de Parqueos y " << cantidadEdificiosAulasCreados << " Edificios de Aulas" << endl;*/
+    for (const auto &finca : fincas_)
+    {
+        cout << "La Finca: " << finca.getNombre() << endl;
+    }
+
     for (const auto &finca : fincas_)
     {
         finca.imprimirInformacion();
