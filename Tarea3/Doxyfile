@@ -1,0 +1,19 @@
+# Configuración de Doxygen
+
+# Directorio de trabajo
+OUTPUT_DIRECTORY = docs
+
+# Generar documentación en formato HTML
+GENERATE_HTML = YES
+
+# Excluir directorios y archivos
+EXCLUDE =
+
+# Directorios de código fuente
+INPUT = "." "empleados.hpp" "empleados.cpp" "main.cpp"
+
+# Establecer la extensión de los archivos de código fuente
+FILE_PATTERNS = *.cpp *.hpp
+
+# Nombre del proyecto
+PROJECT_NAME = "Tarea 3- Gestion de Empleados"

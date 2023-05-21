@@ -1,18 +1,41 @@
-CC=g++
-SRC1=empleados.cpp 
-SRC2=main.cpp
-TARGET=build\empleados.exe
-CLEAN=del /f $(TARGET)
+CC = g++
+CFLAGS = -std=c++11
+DOXYGEN = doxygen
 
-all: $(TARGET)
+SRC1 = empleados.cpp
+SRC2 = main.cpp
+TARGET = build\empleados.exe
+CLEAN = del /f $(TARGET)
+
+SOURCES = $(SRC1) $(SRC2)
+EXECUTABLE = $(TARGET)
+
+DOXYGEN_CONFIG = Doxyfile
+DOCS_OUTPUT_DIR = docs
+
+.SILENT:
+
+.PHONY: default run docs clean dependencies
+
+default: dependencies run
+
+$(EXECUTABLE): $(SOURCES)
+	@if not exist build mkdir build
+	$(CC) $(SOURCES) -o $(EXECUTABLE)
+
+run: $(EXECUTABLE) docs
+	@$(EXECUTABLE)
+	@explorer $(DOCS_OUTPUT_DIR)\html\index.html
+
+docs: $(DOXYGEN_CONFIG)
+	@echo "Generando documentación con Doxygen..."
+	@$(DOXYGEN) $(DOXYGEN_CONFIG) > nul 2>&1
+
+clean:
+	@echo "Limpiando..."
+	@$(CLEAN)
+
+dependencies:
 	@echo "Mostrando dependencias de compilación:"
 	@echo "$(SRC1)"
 	@echo "$(SRC2)"
-	$(TARGET)
-
-$(TARGET): $(SRC1) $(SRC2)
-	@if not exist build mkdir build
-	$(CC) $(SRC1) $(SRC2) -o $(TARGET)
-
-clean:
-	$(CLEAN)
