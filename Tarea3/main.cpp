@@ -52,7 +52,8 @@ using namespace std;
 
 int main()
 {
-    std::vector<Empleado> empleados = leerArchivo("empleados.csv");
+    std::string rutaArchivo = "../../employees.csv";
+    std::vector<Empleado> empleados = leerArchivo(rutaArchivo);
     int opcion;
     bool opcionValida = false; // Variable para verificar si la opción ingresada es válida
     do
