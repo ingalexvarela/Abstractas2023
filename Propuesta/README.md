@@ -5,6 +5,8 @@ PROPUESTA DE PROYECTO
 
 ### **Visión general de la propuesta**
 #### Tabla de Contenidos
+
+- [Visión general de la propuesta](#visión-general-de-la-propuesta)
 - [Explicación del proyecto](#explicación-del-proyecto)
 - [Guía de acciones esperadas al crear el sistema](#guía-de-acciones-esperadas-al-crear-el-sistema)
 - [Propuestas de las pantallas, funcionalidad y widgets para implementar las acciones esperadas](#propuestas-de-las-pantallas-funcionalidad-y-widgets-para-implementar-las-acciones-esperadas)
@@ -19,7 +21,7 @@ El Sistema de Gestión de Paquetes Turísticos es una solución diseñada para f
 
 **Funcionalidades para el Cliente:** el cliente, a través de su propia interfaz de usuario, puede acceder a una serie de características diseñadas para facilitar la búsqueda, selección y reserva de paquetes turísticos. 
 
-#### Guía de acciones esperadas al crear el sistema
+#### **Guía de acciones esperadas al crear el sistema**
 - Inicio del programa:
 		Existe una pantalla que llamaremos inicio, conecta el ingreso como administrador o cliente, y también llama al registro del cliente.
  
@@ -57,7 +59,7 @@ A través de la interfaz de usuario dedicada al ***cliente***, se pueden realiza
 - Reservas del Cliente:
 		Los clientes pueden ver y administrar todas sus reservas existentes. Tendrán acceso a información detallada de cada reserva y la posibilidad de realizar
 
-#### Propuestas de las pantallas, funcionalidad y widgets para implementar las acciones esperadas
+#### **Propuestas de las pantallas, funcionalidad y widgets para implementar las acciones esperadas**
 
 - Pantalla Inicio:
 		Ventana de inicio, conecta el ingreso como administrador o cliente, y también llama al registro del cliente.
@@ -153,9 +155,13 @@ El Sistema de Gestión de Paquetes Turísticos permitirá  al administrador y  a
 </p>
 
 
-#### Diagrama de flujo de la interfaz gráfica
+#### **Diagrama de flujo de la interfaz gráfica**
 
-
+<p align="center">
+  <a href="https://postimg.cc/t1Tsc2xf">
+    <img src="https://i.postimg.cc/Pqb1P7rt/diagram-20230527-2.png" alt="Diagrama" />
+  </a>
+</p>
 
 
 
