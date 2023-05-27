@@ -4,16 +4,13 @@ PROPUESTA DE PROYECTO
 -------------
 
 ### **Visión general de la propuesta**
-**Tabla de contenidos**
-- [Visión general de la propuesta](###visión-general-de-la-propuesta)
-- [Explicación del proyecto](###explicación-del-proyecto)
-- [Guía de acciones esperadas al crear el sistema](####Guía-de-acciones-esperadas-al-crear-el-sistema)
-- [Propuestas de las pantallas, funcionalidad y widgets para implementar las acciones esperadas](####Propuestas-de-las-pantallas,-funcionalidad-y-widgets-para-implementar-las-acciones-esperadas)
-- [Diagrama de flujo de la interfaz gráfica](####diagrama-de-flujo-de-la-interfaz-gráfica)
-- [Entregas del proyecto](###entregas-del-proyecto)
-- [Contacto](###contacto)
-
-
+#### Tabla de Contenidos
+- [Explicación del proyecto](#explicación-del-proyecto)
+- [Guía de acciones esperadas al crear el sistema](#guía-de-acciones-esperadas-al-crear-el-sistema)
+- [Propuestas de las pantallas, funcionalidad y widgets para implementar las acciones esperadas](#propuestas-de-las-pantallas-funcionalidad-y-widgets-para-implementar-las-acciones-esperadas)
+- [Diagrama de flujo de la interfaz gráfica](#diagrama-de-flujo-de-la-interfaz-gráfica)
+- [Entregas del proyecto](#entregas-del-proyecto)
+- [Contacto](#contacto)
 
 ### Explicación del proyecto
 El Sistema de Gestión de Paquetes Turísticos es una solución diseñada para facilitar y optimizar la gestión de paquetes turísticos tanto para el administrador como para los clientes. El sistema ofrecerá una interfaz de usuario intuitiva y atractiva, desarrollada utilizando el software Qt Design y el lenguaje de programación C++. Hecha la creación se espera proporcionar  una experiencia fluida y agradable al interactuar con las diferentes funcionalidades. Es importante reconocer que existen funcionalidades únicas para el Administrador y para el Cliente. 
@@ -158,13 +155,7 @@ El Sistema de Gestión de Paquetes Turísticos permitirá  al administrador y  a
 
 #### Diagrama de flujo de la interfaz gráfica
 
-graph LR
-    st[Ventana de bienvenida] --> op1[Iniciar como Cliente]
-    st --> op2[Iniciar como Administrador]
-    st --> op3[Registrarse]
-    op1 --> e[Fin del programa]
-    op2 --> e
-    op3 --> e
+
 
 
 
