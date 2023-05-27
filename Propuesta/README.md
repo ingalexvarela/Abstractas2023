@@ -4,9 +4,14 @@ PROPUESTA DE PROYECTO
 -------------
 
 ### **Visión general de la propuesta**
-[TOCM]
-
-[TOC]
+**Tabla de contenidos**
+- [Visión general de la propuesta](###visión-general-de-la-propuesta)
+- [Explicación del proyecto](###explicación-del-proyecto)
+- [Guía de acciones esperadas al crear el sistema](####Guía-de-acciones-esperadas-al-crear-el-sistema)
+- [Propuestas de las pantallas, funcionalidad y widgets para implementar las acciones esperadas](####Propuestas-de-las-pantallas,-funcionalidad-y-widgets-para-implementar-las-acciones-esperadas)
+- [Diagrama de flujo de la interfaz gráfica](####diagrama-de-flujo-de-la-interfaz-gráfica)
+- [Entregas del proyecto](###entregas-del-proyecto)
+- [Contacto](###contacto)
 
 
 
@@ -62,7 +67,10 @@ A través de la interfaz de usuario dedicada al ***cliente***, se pueden realiza
         Widgets:  botones para acceder como administrador o cliente, o bien hacer registro como cliente.
 		
 
-![Inicio.jpg](https://i.postimg.cc/Vkf4cNVg/Inicio.jpg)
+<p align="center">
+  <img src="https://i.postimg.cc/Vkf4cNVg/Inicio.jpg" alt="Inicio" />
+</p>
+
 
 El Sistema de Gestión de Paquetes Turísticos permitirá  al administrador y  al cliente realizar las siguientes funciones principales según sea su roll:
 
@@ -71,52 +79,82 @@ El Sistema de Gestión de Paquetes Turísticos permitirá  al administrador y  a
 1. Inicio de Sesión del Administrador:
 		Ventana de inicio de sesión donde el administrador podrá acceder a su cuenta para gestionar el sistema.
         Widgets: campos de entrada de datos para el nombre de usuario y contraseña.
-![Inicio.jpg](https://i.postimg.cc/Kvns2wvG/Admi1.jpg)
+
+<p align="center">
+  <img src="https://i.postimg.cc/Kvns2wvG/Admi1.jpg" alt="Inicio" />
+</p>
+
 
 2. Panel de Control del Administrador:
         Ventana principal del sistema para el administrador, que proporciona una visión general de las estadísticas, paquetes turísticos, reservas, etc.
         Widgets: paneles de información, gráficos interactivos, botones para acceder a otras ventanas.
-![Inicio.jpg](https://i.postimg.cc/t4pvCkYh/Admi2.jpg)
+
+<p align="center">
+  <img src="https://i.postimg.cc/t4pvCkYh/Admi2.jpg" alt="Inicio" />
+</p>
+
+
 3. Gestión de Paquetes Turísticos:
         Ventana donde el administrador puede agregar, editar o eliminar paquetes turísticos.
         Widgets: campos de entrada de datos para la información del paquete, lista de paquetes existentes, botones para acciones de edición o eliminación.
 ![Inicio.jpg](https://i.postimg.cc/BnpY8FKR/Admi3.jpg)
 ![Inicio.jpg](https://i.postimg.cc/fbbHYb7y/Admi4.jpg)
+
 4. Gestión de Reservas:
         Ventana donde el administrador puede ver y administrar las reservas realizadas por los clientes.
         Widgets: lista de reservas, botones para modificar o cancelar reservas, filtros de búsqueda.
-![Inicio.jpg](https://i.postimg.cc/cJ5FhNTm/Admi5.jpg)
+<p align="center">
+  <img src="https://i.postimg.cc/cJ5FhNTm/Admi5.jpg" alt="Inicio" />
+</p>
+
+
 5. Informes y Estadísticas:
         Ventana donde el administrador puede generar informes y ver estadísticas relacionadas con los paquetes turísticos y las reservas.
         Widgets: opciones para seleccionar el tipo de informe o estadística, gráficos interactivos, botón para generar informe.
-![Inicio.jpg](https://i.postimg.cc/RF6XbbDz/Admi6.jpg)
+<p align="center">
+  <img src="https://i.postimg.cc/RF6XbbDz/Admi6.jpg" alt="Inicio" />
+</p>
+
 
 ***Interfaz de Usuario para el Cliente:***
 
  1. Registro de Clientes:
         Ventana de registro donde los clientes pueden crear una cuenta para acceder al sistema y realizar reservas.
         Widgets: campos de entrada de datos para el nombre, dirección de correo electrónico, contraseña, etc.
-![Inicio.jpg](https://i.postimg.cc/HxqBG4q8/Cliente1.jpg)
+<p align="center">
+  <img src="https://i.postimg.cc/HxqBG4q8/Cliente1.jpg" alt="Inicio" />
+</p>
 
 2. Inicio de Sesión del Cliente:
         Ventana de inicio de sesión donde los clientes pueden acceder a su cuenta.
         Widgets: campos de entrada de datos para la dirección de correo electrónico y contraseña.
-![Inicio.jpg](https://i.postimg.cc/mk7VT14X/Cliente2.jpg)
+<p align="center">
+  <img src="https://i.postimg.cc/mk7VT14X/Cliente2.jpg" alt="Inicio" />
+</p>
 
 3. Búsqueda de Paquetes Turísticos:
         Ventana donde los clientes pueden buscar paquetes turísticos por destino, fechas, presupuesto, etc.
         Widgets: campos de entrada de datos, menús desplegables, botones de búsqueda.
-![Inicio.jpg](https://i.postimg.cc/T2btVFbV/Cliente3.jpg)
+<p align="center">
+  <img src="https://i.postimg.cc/T2btVFbV/Cliente3.jpg" alt="Inicio" />
+</p>
+
 
 4. Detalles del Paquete Turístico:
         Ventana que muestra información detallada sobre un paquete turístico seleccionado.
         Widgets: paneles de información, imágenes, botones para reservar o agregar a favoritos.
-![Inicio.jpg](https://i.postimg.cc/bNj33g0K/Cliente4.jpg)
+<p align="center">
+  <img src="https://i.postimg.cc/bNj33g0K/Cliente4.jpg" alt="Inicio" />
+</p>
+
 
 5. Reservas del Cliente:
         Ventana donde los clientes pueden ver y administrar sus reservas existentes.
         Widgets: lista de reservas, botones para cancelar o modificar reservas.
-![Inicio.jpg](https://i.postimg.cc/wTcFPN03/Cliente5.jpg)
+<p align="center">
+  <img src="https://i.postimg.cc/wTcFPN03/Cliente5.jpg" alt="Inicio" />
+</p>
+
 
 #### Diagrama de flujo de la interfaz gráfica
 
