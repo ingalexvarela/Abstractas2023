@@ -15,11 +15,15 @@ PROPUESTA DE PROYECTO
 - [Contacto](#contacto)
 
 ### Explicación del proyecto
-El Sistema de Gestión de Paquetes Turísticos es una solución diseñada para facilitar y optimizar la gestión de paquetes turísticos tanto para el administrador como para los clientes. El sistema ofrecerá una interfaz de usuario intuitiva y atractiva, desarrollada utilizando el software Qt Design y el lenguaje de programación C++. Hecha la creación se espera proporcionar  una experiencia fluida y agradable al interactuar con las diferentes funcionalidades. Es importante reconocer que existen funcionalidades únicas para el Administrador y para el Cliente. 
+<div style="text-align: justify">
 
-**Funcionalidades para el Administrador:** el administrador tiene acceso a un conjunto de herramientas y funciones específicas que le permiten gestionar eficientemente los paquetes turísticos y las reservas. 
+  El Sistema de Gestión de Paquetes Turísticos es una solución diseñada para facilitar y optimizar la gestión de paquetes turísticos tanto para el administrador como para los clientes. El sistema ofrecerá una interfaz de usuario intuitiva y atractiva, desarrollada utilizando el software Qt Design y el lenguaje de programación C++. Hecha la creación se espera proporcionar  una experiencia fluida y agradable al interactuar con las diferentes funcionalidades. Es importante reconocer que existen funcionalidades únicas para el Administrador y para el Cliente. 
 
-**Funcionalidades para el Cliente:** el cliente, a través de su propia interfaz de usuario, puede acceder a una serie de características diseñadas para facilitar la búsqueda, selección y reserva de paquetes turísticos. 
+  **Funcionalidades para el Administrador:** el administrador tiene acceso a un conjunto de herramientas y funciones específicas que le permiten gestionar eficientemente los paquetes turísticos y las reservas. 
+
+  **Funcionalidades para el Cliente:** el cliente, a través de su propia interfaz de usuario, puede acceder a una serie de características diseñadas para facilitar la búsqueda, selección y reserva de paquetes turísticos. 
+
+</div>
 
 #### **Guía de acciones esperadas al crear el sistema**
 - Inicio del programa:
@@ -34,7 +38,10 @@ El Sistema de Gestión de Paquetes Turísticos es una solución diseñada para f
     	El panel de control proporciona una visión general de las estadísticas relevantes, como la cantidad de reservas realizadas, ingresos generados, etc. También ofrece acceso rápido a las principales áreas de gestión.
 
 - Gestión de Paquetes Turísticos:
-    	El administrador puede agregar nuevos paquetes turísticos al sistema, editar los existentes y eliminar aquellos que ya no están disponibles. Esta funcionalidad incluye la posibilidad de cargar imágenes, descripciones detalladas, fechas disponibles y precios.
+    	El administrador puede agregar nuevos paquetes turísticos al sistema, mandar a editar los existentes y eliminar aquellos que ya no están disponibles.
+
+- Plantilla de edición de paquete:
+      El administrador puede editar los paquetes turísticos, esta funcionalidad incluye la posibilidad de cargar imágenes, descripciones detalladas, fechas disponibles y precios.
 
 -	Gestión de Reservas:
 			El administrador tiene acceso a una lista completa de todas las reservas realizadas por los clientes. Puede ver los detalles de cada reserva, realizar modificaciones si es necesario o cancelar una reserva específica.
@@ -95,19 +102,27 @@ El Sistema de Gestión de Paquetes Turísticos permitirá  al administrador y  a
 
 3. Gestión de Paquetes Turísticos:
         Ventana donde el administrador puede agregar, editar o eliminar paquetes turísticos.
-        Widgets: campos de entrada de datos para la información del paquete, lista de paquetes existentes, botones para acciones de edición o eliminación.
-![Inicio.jpg](https://i.postimg.cc/BnpY8FKR/Admi3.jpg)
-![Inicio.jpg](https://i.postimg.cc/fbbHYb7y/Admi4.jpg)
+        Widgets: lista de paquetes existentes, campo de entrada para seleccionar paquete, campo de entrada para agregar paquete, botones para acciones de edición, agregar o eliminación.
+<p align="center">
+  <img src="https://i.postimg.cc/BnpY8FKR/Admi3.jpg" alt="Descripción de la imagen">
+</p>
 
-4. Gestión de Reservas:
+4. Plantilla de edición de paquete:
+        Ventana donde el administrador puede editar paquetes turísticos.
+        Widgets: campos de entrada para cargar imagenes, descripción, fechas y precios.
+<p align="center">
+  <img src="https://i.postimg.cc/fbbHYb7y/Admi4.jpg" alt="Descripción de la imagen">
+</p>
+
+
+5. Gestión de Reservas:
         Ventana donde el administrador puede ver y administrar las reservas realizadas por los clientes.
         Widgets: lista de reservas, botones para modificar o cancelar reservas, filtros de búsqueda.
 <p align="center">
   <img src="https://i.postimg.cc/cJ5FhNTm/Admi5.jpg" alt="Inicio" />
 </p>
 
-
-5. Informes y Estadísticas:
+6. Informes y Estadísticas (Ventana opcional, pensada en la escalabilidad del proyecto):
         Ventana donde el administrador puede generar informes y ver estadísticas relacionadas con los paquetes turísticos y las reservas.
         Widgets: opciones para seleccionar el tipo de informe o estadística, gráficos interactivos, botón para generar informe.
 <p align="center">
