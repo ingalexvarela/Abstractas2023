@@ -1,4 +1,16 @@
 /**
+ * @mainpage Tarea 3 - Gestión de Empleados
+ *
+ * Este proyecto es la tarea 3 de programación en C++ que tiene como objetivo implementar un programa modular que leé un archivo
+ * y almacenar la información de cada empleado en un objeto de una clase Empleado, con siguientes atributos: nombre, correo, edad,
+ * departamento y salario. Además el programa modular permite al usuario realizar búsquedas de empleados por departamento o por rango
+ * de salario usando expresiones regulares para validar la entrada del usuario y buscar en el archivo únicamente los empleados que
+ * cumplan con los criterios de búsqueda para imprimir por pantalla la información de los empleados que cumplan con los criterios de búsqueda.
+ *
+ * ¡Bienvenido a la documentación de la Tarea 3!
+ */
+
+/**
  * @file main.cpp
  *
  * @brief Implementación de la función principal que proporciona una interfaz interactiva para buscar y mostrar información de los empleados.
@@ -54,6 +66,12 @@ int main()
 {
     std::string rutaArchivo = "../../employees.csv";
     std::vector<Empleado> empleados = leerArchivo(rutaArchivo);
+    if (empleados.empty())
+    {
+        std::cout << "Falló la lectura del archivo. Revisar exista el archivo employees.csv." << std::endl;
+        std::cout << "Cerrando el programa" << std::endl;
+        return 0; // Finaliza la ejecución del programa sin generar un error en el Makefile
+    }
     int opcion;
     bool opcionValida = false; // Variable para verificar si la opción ingresada es válida
     do

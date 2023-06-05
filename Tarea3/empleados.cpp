@@ -68,7 +68,7 @@ std::vector<Empleado> leerArchivo(std::string nombreArchivo)
     if (!archivo.is_open())
     {
         std::cerr << "No se pudo abrir el archivo" << std::endl; /**< Mensaje de error si no se pudo abrir el archivo */
-        exit(EXIT_FAILURE);                                      /**< Finaliza la ejecución del programa en caso de error */
+        return empleados;                                        // Devuelve un vector vacío y finaliza la función sin generar un error en el Makefile
     }
 
     std::string linea; /**< Variable para almacenar cada línea del archivo */

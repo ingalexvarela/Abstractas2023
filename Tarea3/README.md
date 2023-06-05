@@ -32,14 +32,18 @@ completa los pasos de https://dev.to/gamegods3/how-to-install-gcc-in-windows-10-
 
 Requisitos: Ejecutar los comandos en la terminal desde el directorio Tarea3.
 
-- Para compilar y ejecutar con el make:  
+- Para compilar y ejecutar con el make de Linux:  
   **mingw32-make all -s**
+
+- Para compilar y ejecutar con el make de Windows:  
+  **mingw32-make -s -f Makefile2**
 
 - Para compilar de forma manual:  
   **g++ ./empleados.cpp ./main.cpp -o empleados.exe**
 
   Luego, para ejecutar el programa:  
   **.\empleados.exe**
+
 
 ## Licencia
 

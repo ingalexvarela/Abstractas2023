@@ -4,15 +4,15 @@ DOXYGEN = doxygen
 
 SRC1 = empleados.cpp
 SRC2 = main.cpp
-TARGET = build/empleados
-CLEAN = rm -f $(TARGET)
+TARGET = build\empleados.exe
+CLEAN = del /f $(TARGET)
 
 SOURCES = $(SRC1) $(SRC2)
 EXECUTABLE = $(TARGET)
 
 DOXYGEN_CONFIG = Doxyfile
 DOCS_OUTPUT_DIR = docs
-INDEX_HTML = $(DOCS_OUTPUT_DIR)/html/index.html
+INDEX_HTML = $(DOCS_OUTPUT_DIR)\html\index.html
 
 .SILENT:
 
@@ -21,16 +21,16 @@ INDEX_HTML = $(DOCS_OUTPUT_DIR)/html/index.html
 default: dependencies run
 
 $(EXECUTABLE): $(SOURCES)
-	@if [ ! -d "build" ]; then mkdir build; fi
+	@if not exist build mkdir build
 	@$(CC) $(SOURCES) -o $(EXECUTABLE)
 
 run: $(EXECUTABLE) docs
-	@./$(EXECUTABLE)
-	@xdg-open $(INDEX_HTML)
+	@$(EXECUTABLE)
+	@start "" "$(INDEX_HTML)"
 
 docs: $(DOXYGEN_CONFIG)
 	@echo "Generando documentación con Doxygen..."
-	@$(DOXYGEN) $(DOXYGEN_CONFIG) > /dev/null 2>&1
+	@$(DOXYGEN) $(DOXYGEN_CONFIG) > nul 2>&1
 
 clean:
 	@echo "Limpiando..."
