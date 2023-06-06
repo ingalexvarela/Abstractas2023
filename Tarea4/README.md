@@ -25,6 +25,32 @@ Ingeniería IE-0217 y la documentación del código fuente se puede consultar en
 - [Contacto](#contacto)
 
 ## Investigación
+** Relacion entre las implementaciones de C++ y la nueva realizada en Python **
+
+ El flujo del programa es el siguiente tanto en el código implementado en C++, como en python:
+ 1. Lectura de archivo y almacenamiento de datos de empleados en lista para python y vector para C++.
+ 2. Mostrar menú de opciones para consultar información sobre los empleados:
+     - Opción 1: Búsqueda por departamento.
+         - Solicitar al usuario el nombre del departamento.
+         - Validar la entrada del usuario.
+         - Mostrar la información de los empleados del departamento.
+         - Mostrar un submenú de opciones.
+     - Opción 2: Búsqueda por rango de salario.
+         - Solicitar al usuario el salario mínimo y máximo.
+         - Validar la entrada del usuario.
+         - Realizar la búsqueda de empleados dentro del rango de salario.
+         - Mostrar la información de los empleados encontrados.
+         - Mostrar un submenú de opciones.
+     - Opción 4: Realizar una nueva consulta.
+         - Volver al menú principal.
+     - Opción 0: Salir del programa.
+         - Terminar la ejecución del programa.
+ 3. El programa continúa en bucle hasta que el usuario seleccione salida (0).
+
+Las diferencias son:
+  - Uso de vector en C++ y lista en Python.
+  - En el programa de Python se verifica los datos del csv también.
+  - Se hizo una verificación de opciones mejor para el MENU 2 en Python.
 
 ## Instalación
 
@@ -41,17 +67,13 @@ completa los pasos de https://dev.to/gamegods3/how-to-install-gcc-in-windows-10-
 Requisitos: Ejecutar los comandos en la terminal desde el directorio Tarea4.
 
 - Para compilar y ejecutar con el make de Linux:  
-  **mingw32-make all -s**
+  **make**
 
 - Para compilar y ejecutar con el make de Windows:  
-  **mingw32-make -s -f Makefile2**
+  **mingw32-make -s**
 
-- Para compilar de forma manual:  
-  **g++ ./empleados.cpp ./main.cpp -o empleados.exe**
-
-  Luego, para ejecutar el programa:  
-  **.\empleados.exe**
-
+- Para ejecutar de forma manual:  
+  **python main.py**
 
 ## Licencia
 
@@ -60,3 +82,5 @@ Creative Commons Legal Code CC0 1.0 Universal, Consulte la licencia para más de
 ## Contacto
 
 correo: alex.varela@ucr.ac.cr tel: +50685525005
+
+[![iconopeque.jpg](https://i.postimg.cc/hvtdRL0p/iconopeque.jpg)](https://postimg.cc/k6L4xtzb)
