@@ -1,0 +1,13 @@
+.PHONY: default
+
+default: generate_docs run open_index
+
+generate_docs:
+	@echo "Generando documentación con Doxygen..."
+	@doxygen Doxyfile > nul 2>&1
+
+run:
+	@python main.py
+
+open_index:
+	@start "" "docs/html/index.html"

@@ -1,19 +1,22 @@
 # __init__.py
 
-"""
- * @mainpage Tarea 4 - Gestión de Empleados en Python
- *
- * Este proyecto es la tarea 4 de programación y tiene por objetivo la
- * migración del programa modular desarrollado en la tarea 3 en lenguaje
- * de programacion c++ a un programa modular desarrollado en lenguaje de
- * programación Python.
- *
- * La programación de la tarea 4 en Python, tiene como objetivo al igual
- * que la tarea 3, implementar un programa modular que leé un archivo y
- * almacena la información de cada empleado, permitiendo al usuario
- * realizar búsquedas de empleados por departamento o por rango de salario.
- * Como acción adicional para esta tarea se verifica los datos del csv
- * también; para no ingresar información erronea a las consultas.
- *
- * ¡Bienvenido a la documentación de la Tarea 4!
-"""
+'''
+init.py
+
+Este archivo sirve como archivo de inicialización para el paquete.
+El archivo init.py es un archivo especial en Python que se utiliza para
+marcar un directorio como un paquete de Python. También puede contener
+código de inicialización u otra lógica a nivel de paquete. Pero para este
+proyecto no se le incluye código.
+
+Este archivo forma parte del proyecto "Empleados" que está bajo la licencia
+Creative Commons Legal Code CC0 1.0 Universal.
+
+@license
+Creative Commons Legal Code CC0 1.0 Universal
+
+Consulta la licencia para más detalles:
+ https://creativecommons.org/publicdomain/zero/1.0/
+Autor = "Alex Varela"
+Fecha = "5 de junio de 2023"
+'''

@@ -1,28 +1,33 @@
+# main.py
+
 """
-@file main.py
-@brief archivo con código principal para consultar información de empleados.
-* El flujo del programa es el siguiente:
- * 1. Lectura de archivo y almacenamiento de  datos de empleados en lista.
- * 2. Mostrar menú de opciones para consultar información sobre los empleados:
- *    - Opción 1: Búsqueda por departamento.
- *        - Solicitar al usuario el nombre del departamento.
- *        - Validar la entrada del usuario.
- *        - Mostrar la información de los empleados del departamento.
- *        - Mostrar un submenú de opciones.
- *    - Opción 2: Búsqueda por rango de salario.
- *        - Solicitar al usuario el salario mínimo y máximo.
- *        - Validar la entrada del usuario.
- *        - Realizar la búsqueda de empleados dentro del rango de salario.
- *        - Mostrar la información de los empleados encontrados.
- *        - Mostrar un submenú de opciones.
- *    - Opción 4: Realizar una nueva consulta.
- *        - Volver al menú principal.
- *    - Opción 0: Salir del programa.
- *        - Terminar la ejecución del programa.
- * 3. El programa continúa en bucle hasta que el usuario seleccione salida (0).
- * @author Alex Varela
- * @date 5 de junio de 2023
+Archivo con código principal para consultar información de empleados.
+
+El flujo del programa es el siguiente:
+1. Lectura de archivo y almacenamiento de datos de empleados en una lista.
+2. Mostrar menú de opciones para consultar información sobre los empleados:
+   - Opción 1: Búsqueda por departamento.
+     - Solicitar al usuario el nombre del departamento.
+     - Validar la entrada del usuario.
+     - Mostrar la información de los empleados del departamento.
+     - Mostrar un submenú de opciones.
+   - Opción 2: Búsqueda por rango de salario.
+     - Solicitar al usuario el salario mínimo y máximo.
+     - Validar la entrada del usuario.
+     - Realizar la búsqueda de empleados dentro del rango de salario.
+     - Mostrar la información de los empleados encontrados.
+     - Mostrar un submenú de opciones.
+   - Opción 4: Realizar una nueva consulta.
+     - Volver al menú principal.
+   - Opción 0: Salir del programa.
+     - Terminar la ejecución del programa.
+
+El programa continúa en bucle hasta que el usuario seleccione salida (0).
+
+Autor = "Alex Varela"
+Fecha = "5 de junio de 2023"
 """
+
 # Importa las funciones necesarias del módulo 'empleados'.
 from empleados import (imprimir_resultados, leer_archivo, validar_entrada,
                        buscar_por_departamento, buscar_por_salario)
@@ -31,7 +36,23 @@ from empleados import (imprimir_resultados, leer_archivo, validar_entrada,
 def main():
     """
     Función principal que realiza la consulta de información de empleados,
-      según la opción seleccionada.
+    configurandose como un programa basado en menús para consultar información
+    de empleados por departamento o por un rango de salario.
+
+    El script lee la información de los empleados desde un archivo CSV y la
+    guarda en una lista llamada empleados. Si la lectura del archivo falla,
+    se muestra un mensaje de error y el programa se cierra. Luego, el script
+    muestra un menú y solicita al usuario que ingrese su elección. Si elige
+    la opción 1, se le pide que ingrese el nombre de un departamento, y se
+    busca y muestra la información de los empleados en ese departamento.
+    Después, se muestra un menú secundario que permite al usuario realizar
+    otra consulta o salir del programa. Si elige la opción 2, se le pide
+    que ingrese un rango de salario, y se buscan y muestran los empleados
+    dentro de ese rango. Luego se muestra el menú secundario. Si el usuario
+    ingresa una opción no válida o un valor no numérico, se muestra un mensaje
+    de error y se vuelve al menú principal. Si elige la opción 0, el programa
+    termina. Además, el script verifica que la función main() se ejecute solo
+    si el script es el programa principal.
     """
     ruta_archivo = "../../employees.csv"  # Ruta del archivo
     # Lee el archivo y guarda la información en la lista 'empleados'.

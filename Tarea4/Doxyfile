@@ -16,8 +16,9 @@ EXCLUDE =
 INPUT = "." "init.py" "empleados.py" "main.py" "README.md"
 
 # Establecer la extensión de los archivos de código fuente
-FILE_PATTERNS = *.cpp *.hpp
+FILE_PATTERNS = *.py *.py
 
 # Nombre del proyecto
 PROJECT_NAME = "Tarea 4- Gestion de Empleados"
 
+USE_MDFILE_AS_MAINPAGE = README.md

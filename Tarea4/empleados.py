@@ -1,3 +1,28 @@
+# empleados.py
+'''
+Este archivo contiene la implementación del código de las 5 funciones
+para el programa modular.
+
+Las funciones implementadas en este archivo son las siguientes:
+
+    "validarEntrada": Función para validar la entrada del usuario.
+    "leerArchivo": Función para leer el archivo, validar información y crear
+     objetos Empleado.
+    "buscarPorDepartamento": Función para buscar empleados por departamento.
+    "buscarPorSalario": Función para buscar empleados por rango de salario.
+    "imprimirResultados": Función para imprimir los resultados de la búsqueda.
+
+Se define el comportamiento de las 5 funciones para un programa modular que
+lee un archivo y almacena la información de cada empleado en un objeto de la
+clase Empleado, con los siguientes atributos: nombre, correo, edad,
+departamento y salario. Además, como programa modular, permite al usuario
+realizar búsquedas de empleados por departamento o por rango de salario
+utilizando expresiones regulares para validar.
+
+Autor = "Alex Varela"
+Fecha = "5 de junio de 2023"
+'''
+
 import csv  # Importa el módulo csv para trabajar con archivos CSV.
 import re  # Importa el módulo re para utilizar expresiones regulares.
 

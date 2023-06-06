@@ -70,7 +70,7 @@ Requisitos: Ejecutar los comandos en la terminal desde el directorio Tarea4.
   **make**
 
 - Para compilar y ejecutar con el make de Windows:  
-  **mingw32-make -s**
+  **mingw32-make -s -f Makefile2**
 
 - Para ejecutar de forma manual:  
   **python main.py**
