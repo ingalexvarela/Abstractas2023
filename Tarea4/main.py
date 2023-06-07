@@ -1,6 +1,7 @@
 # main.py
 
 """
+Programa Principal
 Archivo con código principal para consultar información de empleados.
 
 El flujo del programa es el siguiente:
