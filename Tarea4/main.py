@@ -167,37 +167,38 @@ def main():
                         print(
                             "El rango de salario mínimo no puede ser mayor"
                             " que el máximo. Intente nuevamente.")
+                        rango_valido = False
                     else:
                         # Ingreso exitoso
                         rango_valido = True
 
-                    print("")
-                    print(f"\tLa información de los empleados dentro"
-                          " del rango de salario "
-                          f"₡{salario_minimo} - ₡{salario_maximo} es:")
+                        print("")
+                        print(f"\tLa información de los empleados dentro"
+                              " del rango de salario "
+                              f"₡{salario_minimo} - ₡{salario_maximo} es:")
 
-                    resultados = buscar_por_salario(  # invoca función
-                        empleados, salario_minimo, salario_maximo)
-                    # Imprime resultados de la búsqueda por rango de salario.
-                    imprimir_resultados(resultados)
+                        resultados = buscar_por_salario(  # invoca función
+                            empleados, salario_minimo, salario_maximo)
+                        # Imprime resultados por rango de salario.
+                        imprimir_resultados(resultados)
 
-                    print("\t\t\tMENU DE SALIDA")  # MENU 2
-                    print("Desea:\t4. Realizar nueva consulta\t0. Salir")
+                        print("\t\t\tMENU DE SALIDA")  # MENU 2
+                        print("Desea:\t4. Realizar nueva consulta\t0. Salir")
 
-                    opcion_invalida = True  # Bandera para validar MENU2
+                        opcion_invalida = True  # Bandera para validar MENU2
 
-                    while opcion_invalida:  # si no es false bandera se encicla
-                        opcion = input("Ingrese su opción: ")
-                        if opcion not in ["4", "0"]:  # para opción invalida
-                            print("Opción inválida. Por favor,"
-                                  " ingrese opción nuevamente: "
-                                  " \t4. Realizar nueva consulta\t0. Salir.")
-                        else:  # bandera false fin del ciclo MENU 2
-                            opcion_invalida = False
+                        while opcion_invalida:  # si no es false encicla
+                            opcion = input("Ingrese su opción: ")
+                            if opcion not in ["4", "0"]:  # opción invalida
+                                print("Opción inválida. Por favor,"
+                                      " ingrese opción nuevamente: \t4."
+                                      " Realizar nueva consulta\t0. Salir.")
+                            else:  # bandera false fin del ciclo MENU 2
+                                opcion_invalida = False
 
-                        if opcion == "0":  # Salida de MENU 2
-                            print("Saliendo del programa...")
-                            exit(0)
+                            if opcion == "0":  # Salida de MENU 2
+                                print("Saliendo del programa...")
+                                exit(0)
 
         except ValueError:  # Captura la excepción de tipo ValueError.
             print("Error, se ingresó un carácter no "
