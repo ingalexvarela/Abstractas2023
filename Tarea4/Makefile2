@@ -1,3 +1,4 @@
+# Configuración del Makefile para Windows
 .PHONY: default
 
 default: generate_docs run open_index
