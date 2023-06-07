@@ -1,0 +1,52 @@
+# Configuración del archivo Makefile
+# comandos para compilar y ejecutar un programa en C++
+# este puede ser ejecutado en windows o linux
+
+CC = g++
+CFLAGS = -std=c++11
+DOXYGEN = doxygen
+
+SRC1 = empleados.cpp
+SRC2 = main.cpp
+TARGET = build/empleados.exe
+CLEAN = del /f $(TARGET)
+
+SOURCES = $(SRC1) $(SRC2)
+EXECUTABLE = $(TARGET)
+
+DOXYGEN_CONFIG = Doxyfile
+DOCS_OUTPUT_DIR = docs
+INDEX_HTML = $(DOCS_OUTPUT_DIR)/html/index.html
+
+ifeq ($(OS), Windows_NT)
+	BROWSER = start
+else
+	BROWSER = xdg-open
+endif
+
+.SILENT:
+
+.PHONY: default run docs clean dependencies
+
+default: dependencies run
+
+$(EXECUTABLE): $(SOURCES)
+	@if not exist build mkdir build
+	@$(CC) $(SOURCES) -o $(EXECUTABLE)
+
+run: $(EXECUTABLE) docs
+	@$(EXECUTABLE)
+	@$(BROWSER) "" "$(INDEX_HTML)"
+
+docs: $(DOXYGEN_CONFIG)
+	@echo "Generando documentación con Doxygen..."
+	@$(DOXYGEN) $(DOXYGEN_CONFIG) > nul 2>&1
+
+clean:
+	@echo "Limpiando..."
+	@$(CLEAN)
+
+dependencies:
+	@echo "Mostrando dependencias de compilación:"
+	@echo "$(SRC1)"
+	@echo "$(SRC2)"
