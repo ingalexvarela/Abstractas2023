@@ -12,6 +12,7 @@ Requisitos: Ejecutar los comandos en la terminal desde el directorio Tarea5
 
 - Para ejecutar de forma manual:  
   **python main.py** en Windows
+
   **python3 main.py** en Linux
 
 ## Descripción
@@ -65,6 +66,8 @@ Creative Commons Legal Code CC0 1.0 Universal, Consulte la licencia para más de
 
 ## Contacto
 
-correo: alex.varela@ucr.ac.cr tel: +50685525005
+- Autor: Alex Varela Quirós
+- correo: alex.varela@ucr.ac.cr 
+- tel: +50685525005
 
 [![iconopeque.jpg](https://i.postimg.cc/hvtdRL0p/iconopeque.jpg)](https://postimg.cc/k6L4xtzb)
