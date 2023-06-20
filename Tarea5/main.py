@@ -1,4 +1,9 @@
+# Importar el módulo 'pandas' y asignarlo a 'pd'
+# para el manejo de datos estructurados
 import pandas as pd
+
+# Importar la función 'descargar_datos'
+# desde el módulo 'descargar_datos'
 from descargar_datos import descargar_datos
 
 
@@ -14,7 +19,7 @@ download_link = (
 # Construir la URL de descarga completa
 download_url = base_url + download_link
 
-# Llamar a la función de descarga de datos
+# Llamar a la función de descarga de datos para traer al entorno el csv
 csv_filename = descargar_datos(download_url)
 
 # Imprimir mensaje de éxito y nombre del archivo descargado
@@ -46,7 +51,7 @@ if csv_filename:
         df[columnas_numericas].apply(lambda x: x.apply(
             lambda y: isinstance(y, int) or isinstance(y, float))).all(axis=1)
     ]
-
+    # Para verificar las lineas descartadas
     print("Filas descartadas:")
     df_descartado = df[~df.index.isin(df_filtrado.index)]
     for index, row in df_descartado.iterrows():
@@ -82,8 +87,8 @@ if csv_filename:
                     monthly_delays_2020, monthly_delays_2021,
                     monthly_delays_2022)
 
-    # INICIO DE CALCULOS GRÁFICA 1
-    # Calcular la suma de las variables para cada año
+    # INICIO DE CALCULOS GRÁFICA 2
+    # Calcular la suma de las variables para cada año por categoría
     carrier_delay_sum = df_2018_2022.groupby('year')['carrier_ct'].sum()
     weather_delay_sum = df_2018_2022.groupby('year')['weather_ct'].sum()
     nas_delay_sum = df_2018_2022.groupby('year')['nas_ct'].sum()
@@ -93,10 +98,53 @@ if csv_filename:
     arr_del15_sum = df_2018_2022.groupby('year')['arr_del15'].sum()
 
     from graficos import generar_grafica2
-    # Llamar a la función para generar la gráfica
+    # Llamar a la función para generar la gráfica 2
     generar_grafica2(arr_del15_sum, carrier_delay_sum, weather_delay_sum,
                      nas_delay_sum, security_delay_sum,
                      late_aircraft_delay_sum)
+
+    # INICIO DE CALCULOS GRÁFICA 3
+    # Calcular la variable para gráfica circular
+    # Extraer la lista de años de una columna específica
+    years = df['year'].unique().tolist()
+    # Cantidad de vuelos llegados (operaciones) por año
+    total_operations = {}
+    for year in years:
+        total_ops = df[df['year'] == year]['arr_flights'].sum()
+        total_operations[year] = total_ops
+
+    # Cantidad de vuelos cancelados por año
+    cancelled_flights = {}
+    for year in years:
+        cancelled = df[df['year'] == year]['arr_cancelled'].sum()
+        cancelled_flights[year] = cancelled
+
+    # Cantidad de vuelos desviados por año
+    diverted_flights = {}
+    for year in years:
+        diverted = df[df['year'] == year]['arr_diverted'].sum()
+        diverted_flights[year] = diverted
+
+    # Cantidad de vuelos demorados por año
+    delayed_flights = {}
+    for year in years:
+        delayed = df[df['year'] == year]['arr_del15'].sum()
+        delayed_flights[year] = delayed
+
+    # Calcular la variable On_Time para cada año
+    on_time_sum = {}
+    for year in years:
+        on_time = (df[df['year'] == year]['arr_flights'] - df[
+            df['year'] == year]['arr_cancelled'] - df[
+                df['year'] == year]['arr_diverted'] - df[
+                    df['year'] == year]['arr_del15']).sum()
+        on_time_sum[year] = on_time
+
+    from graficos import generar_grafica3
+    # Llamar a la función para generar la gráfica 3
+    generar_grafica3(total_operations, cancelled_flights, diverted_flights,
+                     delayed_flights, on_time_sum)
+    print("Fin del Programa, revisar el README para la interpretación")
 
 else:
     print("No se encontró ningún archivo CSV en la descarga."

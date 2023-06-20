@@ -1,6 +1,10 @@
+# Importar el módulo 'requests' para realizar solicitudes HTTP
 import requests
+# Importar el módulo 'zipfile' para trabajar con archivos ZIP
 import zipfile
+# Importar la clase 'BytesIO' del módulo 'io'
 from io import BytesIO
+# Importar el módulo 'urllib3' para realizar solicitudes HTTP avanzadas
 import urllib3
 
 # Deshabilitar advertencias de certificado SSL
