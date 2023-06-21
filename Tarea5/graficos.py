@@ -197,7 +197,7 @@ def generar_grafica3(total_operations, cancelled_flights, diverted_flights,
     # Crear una leyenda personalizada
     custom_legend = [plt.Rectangle((0, 0), 1, 1, color=color)
                      for color in colors]
-    labels = ['Cancelled', 'Delayed', 'Diverted', 'On Time']
+    labels = ['Cancelled', 'Diverted', 'Delayed', 'On Time']
     plt.legend(custom_legend, labels, loc='lower right',
                bbox_to_anchor=(0.0, -0.15), ncol=4)
     plt.show()
