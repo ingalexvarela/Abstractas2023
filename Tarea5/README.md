@@ -26,8 +26,8 @@ Es de mención que este proyecto es la tarea 5 de programación y tiene por obje
 en lenguaje de programación Python; que permita el análisis de un conjunto de datos descargados de la web una vez procesados por el
 programa desarrollado. 
 
-Esta tarea se desarrolla en el marco del curso Estructuras Abstractas de Datos y Algoritmos para Ingeniería IE-0217 y la documentación
-del código fuente se puede consultar en la dirección: - [Sitio web del proyecto](https://esp8266alfa.000webhostapp.com/)
+Esta tarea se desarrolla en el marco del curso Estructuras Abstractas de Datos y Algoritmos para Ingeniería IE-0217 y el código fuente
+se puede consultar en la dirección: - [Sitio web del proyecto](https://github.com/ingalexvarela/Abstractas2023/tree/main/Tarea5)
 
 
 ## Tabla de contenidos
@@ -62,16 +62,22 @@ los años donde la oferta de vuelos es mayor. Para validar la conclusión de los
 se muestra el comportamiento de los vuelos en América Latina y Caribe en el año 2020, reconociendo que también se puede
 interpolar este mismo análisis a EE.UU. respecto a las restricciones de viajes aéreos.
 
-•	un vuelo se considera retrasado si llegó (o partió) a la puerta de embarque 15 minutos o más después de la hora de llegada (salida) 
-
-  <p align="center">
+ <p align="center">
   <a href="https://postimg.cc/gallery/Y4tQqgC">
     <img src="https://i.postimg.cc/fRTCc70T/Captura.jpg" alt="Diagrama" />
   </a>
 </p>
 
+•	un vuelo se considera retrasado si llegó (o partió) a la puerta de embarque 15 minutos o más después de la hora de llegada (salida) 
+
 
 - **Segundo resultado obtenido y su interpretación**
+
+<p align="center">
+  <a href="https://postimg.cc/gallery/Y4tQqgC">
+    <img src="https://i.postimg.cc/5273nHw5/Figure-2.png" alt="Diagrama" />
+  </a>
+</p>
 
 La segunda gráfica representa las causas de retrasos por categoría para vuelos en EE.UU., por Año, dichas categorías agrupan las causas de las
 demoras según 5 categorías que el Comité Asesor de Informes a Tiempo de Aerolíneas creo. Las categorías en ingles son Air Carrier, National Aviation System,
@@ -100,16 +106,13 @@ orden de operación (National Aviation System (NAS)) son claves para la segurida
 se nota que el 2020 fue un caso atípico de vuelos y de mayor planeamiento  por lo que también se nota de este gráfico que es el año que presenta los
 números más bajos en todas las categoría.
 
-<p align="center">
-  <a href="https://postimg.cc/gallery/Y4tQqgC">
-    <img src="https://i.postimg.cc/5273nHw5/Figure-2.png" alt="Diagrama" />
-  </a>
-</p>
 
 - **Tercer resultado obtenido y su interpretación**
 
 <p align="center">
-  [![Figure-5.png](https://i.postimg.cc/Pf3KSDLM/Figure-5.png)](https://postimg.cc/7bzg6fnC)
+  <a href="https://postimg.cc/7bzg6fnC">
+    <img src="https://i.postimg.cc/Pf3KSDLM/Figure-5.png" alt="Diagrama" />
+  </a>
 </p>
 
 El tercer gráfico evalua el desempeño de llegadas a tiempo para vuelos de EE.UU. en el periodo (2018 - 2022),Del gráfico podemos observar
