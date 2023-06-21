@@ -33,13 +33,38 @@ del código fuente se puede consultar en la dirección: - [Sitio web del proyect
 ## Tabla de contenidos
 - [Uso](#Uso)
 - [Descripción](#descripción)
-- [Investigación](#investigación)
+- [Resultados obtenidos](#resultados)
 - [Instalación](#instalación)
 - [Licencia](#licencia)
 - [Contacto](#contacto)
 
-## Investigación
-**Interpretación de resultados**
+## Resultados obtenidos
+
+- **Primer resultado obtenido y su interpretación**
+<p align="center">
+  <a href="https://postimg.cc/gallery/Y4tQqgC">
+    <img src="https://i.postimg.cc/fRTCc70T/Captura.jpg" alt="Diagrama" />
+  </a>
+</p>
+
+
+- **Segundo resultado obtenido y su interpretación**
+
+
+- **Tercer resultado obtenido y su interpretación**
+
+
+
+
+
+. Agregue conclusiones y observaciones relevantes basadas en los patrones o
+tendencias identicados en los datos.
+ Realice comentarios sobre las implicaciones y posibles
+aplicaciones de los hallazgos.
+
+
+
+
 Los resultados obtenidos e interpretarlos son: . Agregue conclusiones y observaciones relevantes basadas en los patrones o
 tendencias identicados en los datos. Realice comentarios sobre las implicaciones y posibles aplicaciones de los hallazgo
 
