@@ -41,6 +41,23 @@ del código fuente se puede consultar en la dirección: - [Sitio web del proyect
 ## Resultados obtenidos
 
 - **Primer resultado obtenido y su interpretación**
+
+<p align="center">
+  <a href="https://postimg.cc/gallery/Y4tQqgC">
+    <img src="https://i.postimg.cc/rp792vZK/Figure-1.png" alt="Diagrama" />
+  </a>
+</p>
+
+
+- **Segundo resultado obtenido y su interpretación**
+
+<p align="center">
+  <a href="https://postimg.cc/gallery/Y4tQqgC">
+    <img src="https://i.postimg.cc/5273nHw5/Figure-2.png" alt="Diagrama" />
+  </a>
+</p>
+
+
 <p align="center">
   <a href="https://postimg.cc/gallery/Y4tQqgC">
     <img src="https://i.postimg.cc/fRTCc70T/Captura.jpg" alt="Diagrama" />
@@ -48,13 +65,13 @@ del código fuente se puede consultar en la dirección: - [Sitio web del proyect
 </p>
 
 
-- **Segundo resultado obtenido y su interpretación**
-
-
 - **Tercer resultado obtenido y su interpretación**
 
-
-
+<p align="center">
+  <a href="https://postimg.cc/gallery/Y4tQqgC">
+    <img src="https://i.postimg.cc/N0KxVg43/Figure-4.png" alt="Diagrama" />
+  </a>
+</p>
 
 
 . Agregue conclusiones y observaciones relevantes basadas en los patrones o
